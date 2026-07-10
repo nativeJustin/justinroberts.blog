@@ -2,7 +2,6 @@ import path from "path"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { QuartzPluginData } from "../plugins/vfile"
 import { FilePath, joinSegments, resolveRelative, slugifyFilePath } from "../util/path"
-import { byDateAndAlphabeticalFolderFirst } from "./PageList"
 
 function coverSrc(page: QuartzPluginData): string | undefined {
   const cover = page.frontmatter?.cover as string | undefined
@@ -12,10 +11,28 @@ function coverSrc(page: QuartzPluginData): string | undefined {
   return "/" + slugifyFilePath(rel)
 }
 
-export const BookGrid: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzComponentProps) => {
+function yearRead(page: QuartzPluginData): number | undefined {
+  const year = page.frontmatter?.year_read
+  const num = typeof year === "string" ? parseInt(year, 10) : (year as number | undefined)
+  return typeof num === "number" && !isNaN(num) ? num : undefined
+}
+
+function byYearReadDescending(f1: QuartzPluginData, f2: QuartzPluginData): number {
+  const y1 = yearRead(f1)
+  const y2 = yearRead(f2)
+  if (y1 !== undefined && y2 !== undefined) return y2 - y1
+  if (y1 !== undefined) return -1
+  if (y2 !== undefined) return 1
+
+  const t1 = (f1.frontmatter?.title as string)?.toLowerCase() ?? ""
+  const t2 = (f2.frontmatter?.title as string)?.toLowerCase() ?? ""
+  return t1.localeCompare(t2)
+}
+
+export const BookGrid: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
   const books = allFiles
     .filter((f) => f.slug !== fileData.slug && f.slug?.startsWith("books/"))
-    .sort(byDateAndAlphabeticalFolderFirst(cfg))
+    .sort(byYearReadDescending)
 
   return (
     <div class="book-grid">
@@ -24,6 +41,7 @@ export const BookGrid: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzCom
         const title = (book.frontmatter?.title as string) ?? book.slug
         const author = book.frontmatter?.author as string | undefined
         const rating = book.frontmatter?.rating as number | undefined
+        const year = yearRead(book)
 
         return (
           <a class="book-card internal" href={resolveRelative(fileData.slug!, book.slug!)}>
@@ -34,6 +52,7 @@ export const BookGrid: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzCom
             )}
             <div class="book-card-title">{title}</div>
             {author && <div class="book-card-author">{author}</div>}
+            {year !== undefined && <div class="book-card-year">{year}</div>}
             {typeof rating === "number" &&
               (() => {
                 const filled = Math.max(0, Math.min(5, Math.round(rating)))
@@ -87,6 +106,11 @@ BookGrid.css = `
 .book-card-author {
   color: var(--gray);
   font-size: 0.8rem;
+}
+
+.book-card-year {
+  color: var(--gray);
+  font-size: 0.75rem;
 }
 
 .book-card-rating {
