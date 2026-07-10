@@ -9,5 +9,7 @@ year_read: 2026
 rating: 3
 status: reading
 started: 2025-01-01
-cover: WIN_book_cover.webp
+cover: "covers/WIN.webp"
 ---
+
+![[WIN.webp]]

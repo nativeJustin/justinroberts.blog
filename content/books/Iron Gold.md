@@ -10,5 +10,7 @@ year_read:
 rating:
 status: reading
 started: 2026-06025
-cover: "[[Iron_Gold_2.webp]]"
+cover: "covers/Iron_Gold.webp"
 ---
+
+![[Iron_Gold.webp]]
