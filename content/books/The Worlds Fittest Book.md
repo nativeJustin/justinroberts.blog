@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/The Worlds Fittest Book.webp"
 ---
+
+![[The Worlds Fittest Book.webp]]

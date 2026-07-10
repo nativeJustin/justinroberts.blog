@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/sustain your ability.jpeg"
 ---
+
+![[sustain your ability.jpeg]]

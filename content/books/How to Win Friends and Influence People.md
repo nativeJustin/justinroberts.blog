@@ -9,3 +9,5 @@ rating: 5
 status: read
 cover: "covers/How to win friends influence people.webp"
 ---
+
+![[How to win friends influence people.webp]]

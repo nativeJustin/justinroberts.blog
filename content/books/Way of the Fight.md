@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/Way of the fight.webp"
 ---
+
+![[Way of the fight.webp]]

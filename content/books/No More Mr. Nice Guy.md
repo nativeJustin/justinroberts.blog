@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/No More Mr Nice Guy.webp"
 ---
+
+![[No More Mr Nice Guy.webp]]

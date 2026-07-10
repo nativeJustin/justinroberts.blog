@@ -10,3 +10,5 @@ author: Josh Axe
 started: 2025-06-20
 cover: "covers/Think this Not that.webp"
 ---
+
+![[Think this Not that.webp]]

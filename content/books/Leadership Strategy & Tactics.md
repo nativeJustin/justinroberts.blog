@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Leadership Strategy  Tactics.webp"
 ---
+
+![[Leadership Strategy  Tactics.webp]]

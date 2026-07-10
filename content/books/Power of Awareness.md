@@ -9,3 +9,5 @@ rating: 2
 status: "read"
 cover: "covers/Power of Awareness.webp"
 ---
+
+![[Power of Awareness.webp]]

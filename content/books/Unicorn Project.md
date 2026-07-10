@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Unicorn Project.webp"
 ---
+
+![[Unicorn Project.webp]]

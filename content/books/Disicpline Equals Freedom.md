@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Disicpline Equals Freedom.webp"
 ---
+
+![[Disicpline Equals Freedom.webp]]

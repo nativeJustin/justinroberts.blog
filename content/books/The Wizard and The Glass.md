@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Wizard and The Glass.webp"
 ---
+
+![[The Wizard and The Glass.webp]]

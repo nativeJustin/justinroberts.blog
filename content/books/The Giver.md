@@ -9,3 +9,5 @@ rating: 5
 status: read
 cover: "covers/The giver.webp"
 ---
+
+![[The giver.webp]]

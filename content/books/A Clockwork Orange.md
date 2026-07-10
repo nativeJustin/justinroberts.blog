@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/A Clockwork Orange.webp"
 ---
+
+![[A Clockwork Orange.webp]]

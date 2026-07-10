@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Checklist Manifesto.webp"
 ---
+
+![[The Checklist Manifesto.webp]]

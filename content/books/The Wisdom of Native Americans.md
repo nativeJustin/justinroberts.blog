@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Wisdom of Native Americans.webp"
 ---
+
+![[The Wisdom of Native Americans.webp]]

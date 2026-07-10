@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Obstacle is the Way.webp"
 ---
+
+![[The Obstacle is the Way.webp]]

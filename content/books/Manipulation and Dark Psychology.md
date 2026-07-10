@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Dark psychology.webp"
 ---
+
+![[Dark psychology.webp]]

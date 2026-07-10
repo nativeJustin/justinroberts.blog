@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Save me from myself.webp"
 ---
+
+![[Save me from myself.webp]]

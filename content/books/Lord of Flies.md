@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Lord of Flies.webp"
 ---
+
+![[Lord of Flies.webp]]

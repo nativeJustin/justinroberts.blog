@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Rich Dad Poor Dad.webp"
 ---
+
+![[Rich Dad Poor Dad.webp]]

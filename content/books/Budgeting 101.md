@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Budgeting 101.webp"
 ---
+
+![[Budgeting 101.webp]]

@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Muay Thai The Footwork.webp"
 ---
+
+![[Muay Thai The Footwork.webp]]

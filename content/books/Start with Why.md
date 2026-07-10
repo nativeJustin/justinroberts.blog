@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Start with Why.webp"
 ---
+
+![[Start with Why.webp]]

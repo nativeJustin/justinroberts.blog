@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/IT.webp"
 ---
+
+![[IT.webp]]

@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Boundaries  Freedom.webp"
 ---
+
+![[Boundaries  Freedom.webp]]

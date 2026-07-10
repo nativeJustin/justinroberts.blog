@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Wastelands.webp"
 ---
+
+![[The Wastelands.webp]]

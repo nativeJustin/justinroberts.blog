@@ -9,3 +9,5 @@ rating: 5
 status: read
 cover: "covers/Building a second brain.webp"
 ---
+
+![[Building a second brain.webp]]

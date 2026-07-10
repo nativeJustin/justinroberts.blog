@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Oldman and The Sea.webp"
 ---
+
+![[The Oldman and The Sea.webp]]

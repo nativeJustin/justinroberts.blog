@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Eat and Run.webp"
 ---
+
+![[Eat and Run.webp]]

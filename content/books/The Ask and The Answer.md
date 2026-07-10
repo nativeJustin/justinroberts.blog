@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Ask and The Answer.webp"
 ---
+
+![[The Ask and The Answer.webp]]

@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Algorithms to Live By.webp"
 ---
+
+![[Algorithms to Live By.webp]]

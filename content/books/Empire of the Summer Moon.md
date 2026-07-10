@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/empire of the Summer Moon.jpeg"
 ---
+
+![[empire of the Summer Moon.jpeg]]

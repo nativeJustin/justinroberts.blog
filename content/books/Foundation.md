@@ -10,3 +10,5 @@ status: reading
 started: 2025-12-26
 cover: "covers/Foundation.webp"
 ---
+
+![[Foundation.webp]]

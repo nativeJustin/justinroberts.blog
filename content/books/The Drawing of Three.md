@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Drawing of Three.webp"
 ---
+
+![[The Drawing of Three.webp]]

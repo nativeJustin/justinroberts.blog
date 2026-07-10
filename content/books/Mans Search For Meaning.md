@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Man's search for meaning.webp"
 ---
+
+![[Man's search for meaning.webp]]

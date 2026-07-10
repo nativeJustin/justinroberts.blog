@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/A Book of Five Rings.webp"
 ---
+
+![[A Book of Five Rings.webp]]

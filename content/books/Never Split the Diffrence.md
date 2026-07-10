@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Never Split the Diffrence.webp"
 ---
+
+![[Never Split the Diffrence.webp]]

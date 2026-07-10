@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Courage is Calling.webp"
 ---
+
+![[Courage is Calling.webp]]

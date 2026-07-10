@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Animal Farm.webp"
 ---
+
+![[Animal Farm.webp]]

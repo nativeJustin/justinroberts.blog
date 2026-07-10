@@ -10,3 +10,5 @@ status: reading
 started: 2025-10-05
 cover: "covers/High Performance Browser Networking.webp"
 ---
+
+![[High Performance Browser Networking.webp]]

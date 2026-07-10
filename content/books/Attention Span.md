@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Attention Span.webp"
 ---
+
+![[Attention Span.webp]]

@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Essential oils Ancient Medicine.webp"
 ---
+
+![[Essential oils Ancient Medicine.webp]]

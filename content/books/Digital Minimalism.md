@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Digital Minimalism.webp"
 ---
+
+![[Digital Minimalism.webp]]

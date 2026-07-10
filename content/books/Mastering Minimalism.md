@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Mastering Minimalism.jpeg"
 ---
+
+![[Mastering Minimalism.jpeg]]

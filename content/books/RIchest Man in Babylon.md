@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/Richest man in Babylon.webp"
 ---
+
+![[Richest man in Babylon.webp]]

@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/As a Man Thinketh.webp"
 ---
+
+![[As a Man Thinketh.webp]]

@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Way of the Superior Man.webp"
 ---
+
+![[Way of the Superior Man.webp]]

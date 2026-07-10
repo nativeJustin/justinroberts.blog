@@ -9,3 +9,5 @@ rating: 2
 status: "read"
 cover: "covers/A New Earth.webp"
 ---
+
+![[A New Earth.webp]]

@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Astrophysics for People in a Hurry.webp"
 ---
+
+![[Astrophysics for People in a Hurry.webp]]

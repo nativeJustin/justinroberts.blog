@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/Helter Skelter 1.webp"
 ---
+
+![[Helter Skelter 1.webp]]

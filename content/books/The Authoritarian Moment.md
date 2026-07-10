@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Authoritarian Moment.webp"
 ---
+
+![[The Authoritarian Moment.webp]]

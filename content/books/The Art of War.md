@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/The Art of War.webp"
 ---
+
+![[The Art of War.webp]]

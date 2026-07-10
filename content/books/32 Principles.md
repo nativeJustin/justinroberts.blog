@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/32 Principles.webp"
 ---
+
+![[32 Principles.webp]]

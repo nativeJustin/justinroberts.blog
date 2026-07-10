@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Why We Sleep.webp"
 ---
+
+![[Why We Sleep.webp]]

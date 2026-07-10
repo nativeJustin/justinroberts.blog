@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Ironfit Strength and Endurance Traning.webp"
 ---
+
+![[Ironfit Strength and Endurance Traning.webp]]

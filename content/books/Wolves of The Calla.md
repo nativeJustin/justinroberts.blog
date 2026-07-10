@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Wolves of The Calla.webp"
 ---
+
+![[Wolves of The Calla.webp]]

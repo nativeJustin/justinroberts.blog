@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Knife of Never Letting Go.webp"
 ---
+
+![[The Knife of Never Letting Go.webp]]

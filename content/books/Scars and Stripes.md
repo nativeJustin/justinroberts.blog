@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/scars and stripes.jpeg"
 ---
+
+![[scars and stripes.jpeg]]

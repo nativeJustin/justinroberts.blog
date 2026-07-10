@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Meditations 1.webp"
 ---
+
+![[Meditations 1.webp]]

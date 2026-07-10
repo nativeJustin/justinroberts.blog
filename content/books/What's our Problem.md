@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Whats our Problem.webp"
 ---
+
+![[Whats our Problem.webp]]

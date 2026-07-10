@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Automate the Boring Stuff.webp"
 ---
+
+![[Automate the Boring Stuff.webp]]

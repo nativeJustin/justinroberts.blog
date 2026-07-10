@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/The universe has your back.webp"
 ---
+
+![[The universe has your back.webp]]

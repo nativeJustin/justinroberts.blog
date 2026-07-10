@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Farenheit 451.webp"
 ---
+
+![[Farenheit 451.webp]]

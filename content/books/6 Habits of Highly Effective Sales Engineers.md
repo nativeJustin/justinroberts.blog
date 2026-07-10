@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/6habits 1.webp"
 ---
+
+![[6habits 1.webp]]

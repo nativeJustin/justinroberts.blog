@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/No Death No Fear.webp"
 ---
+
+![[No Death No Fear.webp]]

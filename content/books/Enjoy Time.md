@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Enjoy Time.webp"
 ---
+
+![[Enjoy Time.webp]]

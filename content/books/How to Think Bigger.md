@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/How to Think Bigger.webp"
 ---
+
+![[How to Think Bigger.webp]]

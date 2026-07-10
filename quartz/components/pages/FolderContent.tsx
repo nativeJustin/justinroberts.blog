@@ -2,6 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 import style from "../styles/listPage.scss"
 import { PageList, SortFn } from "../PageList"
+import { BookGrid } from "../BookGrid"
 import { Root } from "hast"
 import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
@@ -114,13 +115,17 @@ export default ((opts?: Partial<FolderContentOptions>) => {
             </p>
           )}
           <div>
-            <PageList {...listProps} />
+            {fileData.slug === "books/index" ? (
+              <BookGrid {...listProps} />
+            ) : (
+              <PageList {...listProps} />
+            )}
           </div>
         </div>
       </div>
     )
   }
 
-  FolderContent.css = concatenateResources(style, PageList.css)
+  FolderContent.css = concatenateResources(style, PageList.css, BookGrid.css)
   return FolderContent
 }) satisfies QuartzComponentConstructor

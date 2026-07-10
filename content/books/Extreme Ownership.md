@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Extreme Ownership.webp"
 ---
+
+![[Extreme Ownership.webp]]

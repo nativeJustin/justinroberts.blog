@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Effective Science of Communication.webp"
 ---
+
+![[The Effective Science of Communication.webp]]

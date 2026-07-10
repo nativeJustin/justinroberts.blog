@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Bullet Journal.webp"
 ---
+
+![[The Bullet Journal.webp]]

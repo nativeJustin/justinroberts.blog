@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Own the Day.webp"
 ---
+
+![[Own the Day.webp]]

@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Atomic Habits.webp"
 ---
+
+![[Atomic Habits.webp]]

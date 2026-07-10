@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Battle Cry.webp"
 ---
+
+![[Battle Cry.webp]]

@@ -9,3 +9,5 @@ rating: 2
 status: "read"
 cover: "covers/Tom Sawyer.webp"
 ---
+
+![[Tom Sawyer.webp]]

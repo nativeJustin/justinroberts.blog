@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Song of Susannah.webp"
 ---
+
+![[Song of Susannah.webp]]

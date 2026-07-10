@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Mind Gym.webp"
 ---
+
+![[Mind Gym.webp]]

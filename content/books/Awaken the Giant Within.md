@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Awaken the Giant Within.webp"
 ---
+
+![[Awaken the Giant Within.webp]]

@@ -9,3 +9,5 @@ rating: 5
 status: read
 cover: "covers/4hourwork.webp"
 ---
+
+![[4hourwork.webp]]

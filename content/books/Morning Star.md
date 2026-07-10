@@ -11,3 +11,5 @@ status: reading
 started: 2026-05-07
 cover: "covers/moriningstar.webp"
 ---
+
+![[moriningstar.webp]]

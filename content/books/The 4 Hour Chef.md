@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/4-Hour Chef.webp"
 ---
+
+![[4-Hour Chef.webp]]

@@ -9,3 +9,5 @@ rating: 3
 status: read
 cover: "covers/Outliers.webp"
 ---
+
+![[Outliers.webp]]

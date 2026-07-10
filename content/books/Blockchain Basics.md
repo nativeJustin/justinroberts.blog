@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Blockchain Basics.webp"
 ---
+
+![[Blockchain Basics.webp]]

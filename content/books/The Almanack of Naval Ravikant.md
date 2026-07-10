@@ -9,3 +9,5 @@ rating: 5
 status: read
 cover: "covers/the Almanac of Novel Ravikant.png"
 ---
+
+![[the Almanac of Novel Ravikant.png]]

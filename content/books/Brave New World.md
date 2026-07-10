@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Brave New World.webp"
 ---
+
+![[Brave New World.webp]]

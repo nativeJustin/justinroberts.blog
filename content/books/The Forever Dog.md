@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/The Forever Dog.webp"
 ---
+
+![[The Forever Dog.webp]]

@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Non-Negotiable.webp"
 ---
+
+![[Non-Negotiable.webp]]

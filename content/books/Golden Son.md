@@ -11,3 +11,5 @@ status: reading
 started: 2026-04-25
 cover: "covers/goldenson.webp"
 ---
+
+![[goldenson.webp]]

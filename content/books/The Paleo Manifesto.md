@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/The Paleo Manifesto.webp"
 ---
+
+![[The Paleo Manifesto.webp]]

@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Subtle Art of Not Giving a Fuck.webp"
 ---
+
+![[Subtle Art of Not Giving a Fuck.webp]]

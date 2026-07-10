@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Moon is a Harsh Mistress.webp"
 ---
+
+![[The Moon is a Harsh Mistress.webp]]

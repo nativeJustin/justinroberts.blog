@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Think and Grow Rich.webp"
 ---
+
+![[Think and Grow Rich.webp]]

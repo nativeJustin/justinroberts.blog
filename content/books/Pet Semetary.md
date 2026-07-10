@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Pet Semetary.webp"
 ---
+
+![[Pet Semetary.webp]]

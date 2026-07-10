@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Wind Through the Keyhole.webp"
 ---
+
+![[The Wind Through the Keyhole.webp]]

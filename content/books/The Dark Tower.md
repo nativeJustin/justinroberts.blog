@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/The Dark Tower.webp"
 ---
+
+![[The Dark Tower.webp]]

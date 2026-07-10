@@ -9,3 +9,5 @@ rating: 5
 status: "read"
 cover: "covers/Stillness is Key.webp"
 ---
+
+![[Stillness is Key.webp]]

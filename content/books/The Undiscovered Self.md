@@ -9,3 +9,5 @@ rating: 2
 status: "read"
 cover: "covers/The Undiscovered Self.webp"
 ---
+
+![[The Undiscovered Self.webp]]

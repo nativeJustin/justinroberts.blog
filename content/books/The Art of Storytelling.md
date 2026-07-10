@@ -9,3 +9,5 @@ rating: 2
 status: "read"
 cover: "covers/The Art of Storytelling.webp"
 ---
+
+![[The Art of Storytelling.webp]]

@@ -9,3 +9,5 @@ rating: 4
 status: "read"
 cover: "covers/Bounce back.webp"
 ---
+
+![[Bounce back.webp]]

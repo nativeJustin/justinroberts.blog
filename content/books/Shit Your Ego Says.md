@@ -9,3 +9,5 @@ rating: 4
 status: read
 cover: "covers/shit your ego says.jpeg"
 ---
+
+![[shit your ego says.jpeg]]

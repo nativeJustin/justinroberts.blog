@@ -11,3 +11,5 @@ status: read
 started: 2026-04-23
 cover: "covers/red_rising_cover.webp"
 ---
+
+![[red_rising_cover.webp]]

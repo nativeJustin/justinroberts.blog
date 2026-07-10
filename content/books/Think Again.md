@@ -9,3 +9,5 @@ rating: 3
 status: "read"
 cover: "covers/Think Again.webp"
 ---
+
+![[Think Again.webp]]
