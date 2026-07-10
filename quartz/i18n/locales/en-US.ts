@@ -62,8 +62,8 @@ export default {
   },
   pages: {
     rss: {
-      recentNotes: "Recent notes",
-      lastFewNotes: ({ count }) => `Last ${count} notes`,
+      recentNotes: "Latest posts",
+      lastFewNotes: ({ count }) => `Latest ${count} posts`,
     },
     error: {
       title: "Not Found",
