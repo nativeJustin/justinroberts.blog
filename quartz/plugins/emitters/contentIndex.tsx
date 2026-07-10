@@ -129,9 +129,16 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       }
 
       if (opts?.enableRSS) {
+        // RSS is for actual posts, not the book library or standalone pages like
+        // the homepage/about - those still show up in the sitemap and site search
+        const rssIndex: ContentIndexMap = new Map(
+          Array.from(linkIndex).filter(
+            ([slug]) => !slug.startsWith("books/") && slug !== "about" && slug !== "index",
+          ),
+        )
         yield write({
           ctx,
-          content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
+          content: generateRSSFeed(cfg, rssIndex, opts.rssLimit),
           slug: (opts?.rssSlug ?? "index") as FullSlug,
           ext: ".xml",
         })
