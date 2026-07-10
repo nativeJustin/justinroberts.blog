@@ -64,6 +64,14 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   of the sidebar, since having it in both felt redundant.
 - **Footer** (`quartz.layout.ts`, `sharedPageComponents.footer`) links to About Me and GitHub, on
   every page.
+- **RSS feed** (`/index.xml`, auto-discoverable via a `<link rel="alternate">` tag Quartz emits on
+  every page) is scoped in `quartz/plugins/emitters/contentIndex.tsx` to exclude `books/*`,
+  `about`, and `index` — those are real pages (still in the sitemap for SEO) but not "posts," and
+  including them flooded the feed with 146 empty book notes plus the homepage/about page. The
+  feed will be empty until real posts get added outside `content/books/`; that's expected, not a
+  bug. If posts eventually get their own folder (e.g. `content/writing/`), this exclusion list
+  won't need to change — it's an exclude-list, not an include-list, so new top-level content is
+  RSS-eligible by default.
 
 ## Deploy
 
