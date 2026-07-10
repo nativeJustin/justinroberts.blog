@@ -2,7 +2,8 @@
 title: Justin Roberts
 ---
 
-Welcome. This is my personal site.
+<p class="eyebrow">AI · Software · BJJ · Fitness · Books</p>
 
-- [[about|About Me]] — who I am
-- [[books/index|Books]] — what I've been reading
+I'm into AI and software, Brazilian Jiu-Jitsu, fitness, and good books — and this is where I write about all of it: technical deep dives, training notes, book recommendations, and whatever's currently got my attention.
+
+Start with [[about|the full story]], or dig into [[books/index|what I've been reading]].
