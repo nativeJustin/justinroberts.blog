@@ -34,11 +34,15 @@ export const BookGrid: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzCom
             )}
             <div class="book-card-title">{title}</div>
             {author && <div class="book-card-author">{author}</div>}
-            {typeof rating === "number" && (
-              <div class="book-card-rating">
-                {"★".repeat(rating) + "☆".repeat(Math.max(0, 5 - rating))}
-              </div>
-            )}
+            {typeof rating === "number" &&
+              (() => {
+                const filled = Math.max(0, Math.min(5, Math.round(rating)))
+                return (
+                  <div class="book-card-rating">
+                    {"★".repeat(filled) + "☆".repeat(5 - filled)}
+                  </div>
+                )
+              })()}
           </a>
         )
       })}

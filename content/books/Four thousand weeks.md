@@ -9,5 +9,7 @@ year_read: 2026
 rating: 3
 status: read
 started: 2026-04-01
-cover: 4thousand.webp
+cover: "covers/4thousand.webp"
 ---
+
+![[4thousand.webp]]
