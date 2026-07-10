@@ -5,20 +5,20 @@ Cloudflare Workers (static assets), served at `justinroberts.blog`.
 
 ## What this repo is
 
-Content originates in Justin's private Obsidian vault (`personal-vault`, a separate repo). This
-repo is a curated, public subset of that vault — not a mirror. Only content that's meant to be
-public lives here.
+Content originates in Justin's private Obsidian vault (a separate, private repo). This repo is a
+curated, public subset of that vault — not a mirror. Only content that's meant to be public lives
+here.
 
-## Content pipeline (personal-vault -> here)
+## Content pipeline (private vault -> here)
 
-The book library (`content/books/*.md`) was imported from `personal-vault/Notes/*.md` files
-tagged `books`. The import rule, and the standard to follow for any future import from the vault:
+The book library (`content/books/*.md`) was imported from the vault's `Notes/*.md` files tagged
+`books`. The import rule, and the standard to follow for any future import from the vault:
 
 - **Keep frontmatter** (title, author, genre, year_read, rating, status, cover) — it's just
   metadata, not personal.
 - **Strip body text.** Personal notes/reviews in the vault's book notes are private; only the
   frontmatter and a cover image embed carry over.
-- **Cover images**: copied from `personal-vault/Assets/` into `content/books/covers/`, referenced
+- **Cover images**: copied from the vault's `Assets/` folder into `content/books/covers/`, referenced
   in frontmatter as `cover: "covers/<filename>"`, and embedded in the note body as
   `![[<filename>]]` so both the individual book page and the homepage/grid can resolve them.
 - Before pulling any *new* section from the vault (BJJ notes, daily journal, etc.), re-read the
