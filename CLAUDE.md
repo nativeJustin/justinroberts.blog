@@ -62,8 +62,14 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
 - **Explorer sidebar** (`quartz.layout.ts`, `explorerFilter`) excludes `about` and `tags` from the
   nav tree. `/about` is still a real, linkable page — just reachable via the footer link instead
   of the sidebar, since having it in both felt redundant.
-- **Footer** (`quartz.layout.ts`, `sharedPageComponents.footer`) links to About Me and GitHub, on
-  every page.
+- **Footer** (`quartz.layout.ts`, `sharedPageComponents.footer`) is site-wide contact/subscribe
+  surface: About Me, Subscribe via RSS (`/index.xml`), the contact email, and GitHub. The email
+  link's visible text is the literal address (`hello@justinroberts.blog`), not a generic "Email"
+  label — deliberate, so it's readable/copy-pasteable even on a browser with no default mail
+  client configured (a bare `mailto:` link does nothing visible in that case, which is normal
+  browser behavior, not a bug — don't "fix" it by trying to detect mail client support).
+  `hello@justinroberts.blog` is a Cloudflare Email Routing forward, not a real inbox — set up
+  outside this repo, in the Cloudflare dashboard.
 - **RSS feed** (`/index.xml`, auto-discoverable via a `<link rel="alternate">` tag Quartz emits on
   every page) is scoped in `quartz/plugins/emitters/contentIndex.tsx` to exclude `books/*`,
   `about`, and `index` — those are real pages (still in the sitemap for SEO) but not "posts," and
@@ -71,7 +77,9 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   feed will be empty until real posts get added outside `content/books/`; that's expected, not a
   bug. If posts eventually get their own folder (e.g. `content/writing/`), this exclusion list
   won't need to change — it's an exclude-list, not an include-list, so new top-level content is
-  RSS-eligible by default.
+  RSS-eligible by default. The feed's channel description ("Latest N posts on Justin Roberts") is
+  overridden in `quartz/i18n/locales/en-US.ts` (`pages.rss`) — upstream Quartz's default says
+  "notes," which reads as digital-garden jargon rather than blog language.
 
 ## Deploy
 
