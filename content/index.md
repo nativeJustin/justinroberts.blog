@@ -4,6 +4,10 @@ title: Justin Roberts
 
 <p class="eyebrow">AI · Software · BJJ · Fitness · Books</p>
 
-I'm into AI and software, Brazilian Jiu-Jitsu, fitness, and good books — and this is where I write about all of it: technical deep dives, training notes, book recommendations, and whatever's currently got my attention.
+Welcome.
 
-Start with [[about|the full story]], or dig into [[books/index|what I've been reading]].
+This is where I write about AI, software engineering, Brazilian Jiu-Jitsu, fitness, books, and the ideas I'm exploring along the way. You'll find technical deep dives, practical guides, training notes, and the occasional thought worth sharing.
+
+If something here helps you build, learn, or think a little differently, then it's done its job.
+
+Start with [[books/index|the latest posts]], or [[about|learn more about me]].
