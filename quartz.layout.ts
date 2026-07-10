@@ -20,7 +20,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       "About Me": "/about",
       "Subscribe via RSS": "/index.xml",
-      Email: "mailto:hello@justinroberts.blog",
+      "hello@justinroberts.blog": "mailto:hello@justinroberts.blog",
       GitHub: "https://github.com/nativeJustin",
     },
   }),
