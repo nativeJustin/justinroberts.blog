@@ -8,6 +8,9 @@ const FAVORITES = [
   "The Phoenix Project",
   "Unicorn Project",
   "Discipline Equals Freedom",
+  "Exhalation",
+  "Smarter Not Harder",
+  "The Dark Tower",
 ]
 
 export const HomeHighlights: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
