@@ -4,12 +4,12 @@ title: About Me
 
 ![[avatar.png|200]]
 
-Hi, I'm a Solutions Engineer with a passion for solving complex problems and making technology easier to understand. I've been working in the tech industry since 2021, helping bridge the gap between technical solutions and real-world business challenges.
+Hi, I'm Justin. I've been working in tech since 2021, mostly living in the space where a clever idea has to survive contact with a real system and real constraints. That's the part I like: taking something abstract and figuring out how to actually make it work.
 
-Outside of work, I'm just as passionate about optimizing performance in everyday life. Health, fitness, and nutrition are a big part of who I am. I'm a Brazilian Jiu-Jitsu brown belt and train regularly, always looking for ways to improve both physically and mentally. The discipline and continuous learning that come from martial arts carry over into every aspect of my life.
+Lately most of what I think about is AI. What it's good at, where it quietly falls apart, how the tools are changing the way I build and work day to day. I'm less interested in the hype cycle and more in the practical questions. What holds up when you use it for real? What's just a demo? I'll be writing a lot about that here, along with software, career stuff, and the systems I use to keep my own work from turning into chaos.
 
-When I'm not working or training, you'll usually find me with a good book, exploring the outdoors, or hiking with my husky, Silas. I believe some of the best ideas come away from a screen, whether that's on a mountain trail or during a long walk with my dog.
+Away from the screen, I train Brazilian Jiu-Jitsu. I'm a brown belt, still learning, still getting humbled on the mats every week. BJJ has taught me more about patience and problem-solving than any job has, and a fair amount of that leaks into how I think about everything else. Health, fitness, and nutrition matter to me for the same reason: they're just other systems worth paying attention to.
 
-This blog is where all of those interests come together. You'll find articles about technology, software, AI, career growth, productivity, fitness, nutrition, Brazilian Jiu-Jitsu, books worth reading, and lessons I've learned along the way. My goal is to share practical insights, useful ideas, and experiences that help others learn, improve, and think differently.
+When I'm not working or training, you'll usually find me reading, outside, or hiking with my wife, Jennifer, and our husky, Silas. Some of my best thinking happens on a trail with the two of them, well away from any notifications.
 
-Whether you're here for technical deep dives, training tips, book recommendations, or just curious about what I'm working on, I'm glad you stopped by. I hope you find something that inspires you to keep learning, building, and challenging yourself.
+This blog is where all of that lands. AI and software, training tips, book recommendations, and whatever I've been chewing on lately. My aim is to write things that are actually useful, the kind of post I'd want to find myself. If you're here for the technical deep dives, the fitness stuff, or just curious what I'm building, glad you stopped by.
