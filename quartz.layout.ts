@@ -87,14 +87,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({ filterFn: explorerFilter }),
   ],
-  right: [
-    Component.ConditionalRender({
-      component: Component.Graph(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-  ],
+  right: [Component.DesktopOnly(Component.TableOfContents())],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

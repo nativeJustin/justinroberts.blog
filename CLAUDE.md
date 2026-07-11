@@ -62,8 +62,6 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   `Component.ConditionalRender` in `quartz.layout.ts` keyed on `fileData.slug === "index"`:
   - Article title and content-meta (date/read-time) are hidden — the sidebar already shows the
     site name, so a duplicate heading was redundant.
-  - Graph View is hidden — it looked sparse with only a couple of nodes; revisit once there's more
-    real content (blog posts, not just books/about).
   - `HomeHighlights` (stat + favorites) only renders here. The "Favorite Books" heading uses the
     shared `.eyebrow` class (uppercase, letter-spaced) instead of a plain `<h3>`, for visual
     consistency with other section labels on the site — it was originally just "Favorites" styled
@@ -72,6 +70,10 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
     `books/index` — a leftover placeholder from before `content/writing/` existed. Fixed once real
     posts landed there; if you ever see a homepage link pointing at the wrong section, check for
     this kind of stale-placeholder pattern.
+- **Graph View and Backlinks are removed site-wide** (not just hidden on the homepage) —
+  `defaultContentPageLayout.right` in `quartz.layout.ts` only renders `TableOfContents` now.
+  Graph looked sparse with only a couple of nodes even on content pages; Backlinks wasn't pulling
+  its weight since most content isn't cross-linked. Revisit if the content graph gets denser.
 - **Explorer sidebar** (`quartz.layout.ts`, `explorerFilter`) excludes `about` and `tags` from the
   nav tree. `/about` is still a real, linkable page — just reachable via the footer link instead
   of the sidebar, since having it in both felt redundant.
@@ -197,7 +199,17 @@ from Obsidian instead of going through a coding session or GitHub's web UI.
 - Chat can't pull bytes out of a pasted image — there's no tool that saves chat image attachments
   to disk. When Justin pastes an image (avatar, cover art, etc.), the working pattern is: he
   uploads it directly to the repo via GitHub's web UI (`Add file → Upload files`), then it gets
-  pulled with `git pull` and wired up from there.
+  pulled with `git pull` and wired up from there. If the image already exists as a local file
+  (e.g. saved to the Desktop) rather than pasted into chat, it can be read and processed directly
+  — no GitHub web UI round-trip needed.
+- **Bulk book-cover replacement pattern**: when swapping out a batch of low-quality covers, match
+  each replacement image to its target by book title (case-insensitive, ignoring
+  spaces/punctuation), verify every target filename actually exists in `content/books/covers/`
+  before touching anything, then convert/resize with `sharp` (width capped at 400px,
+  `withoutEnlargement`, `.webp` quality ~82) and overwrite the existing filename in place — no
+  frontmatter changes needed since the `cover:` path doesn't change. Run any one-off conversion
+  script from inside the repo root (so it resolves the local `sharp` dependency) and delete it
+  afterward; don't commit throwaway scripts.
 - This repo is public — a secret scan (manual grep across all tracked files + history, since
   GitHub Advanced Security isn't enabled on this personal repo) turned up nothing; keep it that
   way. `npm audit fix` was run once already to clear known dependency vulnerabilities; re-check
