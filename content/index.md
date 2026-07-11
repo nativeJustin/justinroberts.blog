@@ -10,4 +10,4 @@ This is where I write about AI, software engineering, Brazilian Jiu-Jitsu, fitne
 
 If something here helps you build, learn, or think a little differently, then it's done its job.
 
-Start with [[books/index|the latest posts]], or [[about|learn more about me]].
+Start with [[writing/index|the latest posts]], or [[about|learn more about me]].

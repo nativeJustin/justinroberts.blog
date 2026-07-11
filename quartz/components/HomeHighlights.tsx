@@ -31,7 +31,7 @@ export const HomeHighlights: QuartzComponent = ({ fileData, allFiles }: QuartzCo
 
       {favorites.length > 0 && (
         <>
-          <h3 class="favorites-heading">Favorites</h3>
+          <p class="favorites-heading eyebrow">Favorite Books</p>
           <div class="book-strip">
             {favorites.map((book) => (
               <BookCard from={fileData.slug!} book={book} />
@@ -58,8 +58,6 @@ HomeHighlights.css =
 }
 
 .favorites-heading {
-  font-family: var(--headerFont);
-  font-size: 1.1rem;
   margin: 0 0 1rem;
 }
 

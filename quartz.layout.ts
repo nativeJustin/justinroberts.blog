@@ -2,9 +2,31 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { FileTrieNode } from "./quartz/util/fileTrie"
 import { HomeHighlights } from "./quartz/components/HomeHighlights"
+import { BookReviewNote } from "./quartz/components/BookReviewNote"
+import { BookMeta } from "./quartz/components/BookMeta"
 
 const explorerFilter = (node: FileTrieNode) =>
   node.slugSegment !== "tags" && node.slugSegment !== "about"
+
+// pages that aren't real posts (homepage, about, book library, folder/tag listings)
+// don't get a comment thread
+const isCommentablePage = (slug: string) =>
+  slug !== "index" &&
+  slug !== "about" &&
+  !slug.startsWith("books/") &&
+  !slug.startsWith("tags/") &&
+  !slug.endsWith("/index")
+
+const Comments = Component.Comments({
+  provider: "giscus",
+  options: {
+    repo: "nativeJustin/justinroberts.blog",
+    repoId: "R_kgDOTUmAHQ",
+    category: "Comments",
+    categoryId: "DIC_kwDOTUmAHc4DA78m",
+    mapping: "pathname",
+  },
+})
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -15,12 +37,19 @@ export const sharedPageComponents: SharedLayout = {
       component: HomeHighlights,
       condition: (page) => page.fileData.slug === "index",
     }),
+    BookMeta,
+    BookReviewNote,
+    Component.ConditionalRender({
+      component: Comments,
+      condition: (page) => isCommentablePage(page.fileData.slug ?? ""),
+    }),
   ],
   footer: Component.Footer({
     links: {
       "About Me": "/about",
+      "Contact: hello@justinroberts.blog": "mailto:hello@justinroberts.blog",
       "Subscribe via RSS": "/index.xml",
-      "hello@justinroberts.blog": "mailto:hello@justinroberts.blog",
+      "Buy Me a Coffee": "https://buymeacoffee.com/justinroberts",
       GitHub: "https://github.com/nativeJustin",
     },
   }),

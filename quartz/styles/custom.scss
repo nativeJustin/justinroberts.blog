@@ -10,3 +10,32 @@
   color: var(--tertiary);
   margin: 0 0 1rem;
 }
+
+footer ul {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+.book-meta {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.book-meta-rating {
+  color: var(--secondary);
+  letter-spacing: 1px;
+}
+
+.book-review-note {
+  font-style: italic;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+body[data-slug^="books/"] article img {
+  max-width: 220px;
+  display: block;
+  margin: 1rem auto;
+}
