@@ -96,18 +96,22 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
 - **Comments** (`quartz/components/Comments.tsx`, giscus — vendored with upstream Quartz but not
   wired in by default) is turned on in `sharedPageComponents.afterBody` in `quartz.layout.ts`,
   gated by a local `isCommentablePage()` check: comments only show on real posts, excluding
-  `index`, `about`, `books/*`, `tags/*`, and any `*/index` folder page. This exclusion list is
-  separate from (not shared with) the RSS exclusion list in `contentIndex.tsx` below — if the
-  definition of "real post" changes, both lists need updating, they're not DRY. giscus config
-  (`repo`, `repoId`, `category`, `categoryId`) points at this repo's own GitHub Discussions
-  (category `Comments`, created for this purpose); the giscus GitHub App is installed on this repo
-  and Discussions is enabled.
+  `index`, `about`, `books/*`, `tags/*`, and any `*/index` folder page. This exclusion list is a
+  separate implementation (not shared code) from the RSS exclusion list in `contentIndex.tsx`
+  below, but both now cover the same `*/index` folder-page case — if the definition of "real post"
+  changes, both lists need updating, they're not DRY. giscus config (`repo`, `repoId`, `category`,
+  `categoryId`) points at this repo's own GitHub Discussions (category `Comments`, created for this
+  purpose); the giscus GitHub App is installed on this repo and Discussions is enabled.
 - **RSS feed** (`/index.xml`, auto-discoverable via a `<link rel="alternate">` tag Quartz emits on
   every page) is scoped in `quartz/plugins/emitters/contentIndex.tsx` to exclude `books/*`,
-  `about`, and `index` — those are real pages (still in the sitemap for SEO) but not "posts," and
-  including them flooded the feed with 146 empty book notes plus the homepage/about page. It's an
-  exclude-list, not an include-list, so `content/writing/` posts are RSS-eligible by default with
-  no changes needed there. The feed's channel description ("Latest N posts on Justin Roberts") is
+  `about`, `index`, and any `*/index` folder page (e.g. `writing/index`) — those are real pages
+  (still in the sitemap for SEO) but not "posts," and including them flooded the feed with 146
+  empty book notes plus the homepage/about page. The `*/index` exclusion was added after
+  `content/writing/index.md` briefly leaked into the feed as an empty one-line item once the
+  Writing section existed — the original exclude-list predated any non-book folder and only
+  special-cased `books/*` by name. It's an exclude-list, not an include-list, so individual
+  `content/writing/` posts are RSS-eligible by default with no changes needed there. The feed's
+  channel description ("Latest N posts on Justin Roberts") is
   overridden in `quartz/i18n/locales/en-US.ts` (`pages.rss`) — upstream Quartz's default says
   "notes," which reads as digital-garden jargon rather than blog language.
 - **Individual book pages** (`content/books/*.md`, not `books/index`) get two extra components in
