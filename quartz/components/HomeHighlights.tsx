@@ -26,7 +26,7 @@ export const HomeHighlights: QuartzComponent = ({ fileData, allFiles }: QuartzCo
   return (
     <div class="home-highlights">
       <p class="book-stat">
-        {books.length} books logged{sinceYear ? ` since ${sinceYear}` : ""}
+        {books.length} books read{sinceYear ? ` since ${sinceYear}` : ""}
       </p>
 
       {favorites.length > 0 && (

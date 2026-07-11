@@ -10,8 +10,8 @@ export const BookReviewNote: QuartzComponent = ({ displayClass, fileData }: Quar
 
   return (
     <p class={classNames(displayClass, "book-review-note")}>
-      I'm building out full reviews going forward. This one predates that, so it's just tracked
-      here for now.
+      I'm writing full reviews for books going forward. This one was logged before that started,
+      so it's tracked here without one.
     </p>
   )
 }

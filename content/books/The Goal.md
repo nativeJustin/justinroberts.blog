@@ -5,7 +5,7 @@ title: "The Goal"
 author: "Eli Goldratt"
 genre: "Non-fiction"
 year_read: 2025
-rating: 4
+rating: 5
 status: "read"
 cover: "covers/The Goal.webp"
 ---
