@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Essentialism"
-author: "Greg McKweon"
+author: "Greg McKeown"
 genre: "Personal Growth"
 year_read: 2022
 rating: 4

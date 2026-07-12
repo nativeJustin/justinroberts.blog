@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Tribe of Mentors"
-author: "Tim Ferris"
+author: "Tim Ferriss"
 genre: "Leadership"
 year_read: 2019
 rating: 4

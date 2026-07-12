@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: Emotinal Intelligence
+title: Emotional Intelligence
 author: Dr. David Walton
 genre: Personal Growth
 year_read: 2019

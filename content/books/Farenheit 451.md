@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Farenheit 451"
+title: "Fahrenheit 451"
 author: "Ray Bradbury"
 genre: "Fiction"
 year_read: 2019

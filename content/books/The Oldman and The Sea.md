@@ -1,8 +1,8 @@
 ---
 tags:
   - books
-title: "The Oldman and The Sea"
-author: "Ernest Hemmingway"
+title: "The Old Man and the Sea"
+author: "Ernest Hemingway"
 genre: "Fiction"
 year_read: 2019
 rating: 3

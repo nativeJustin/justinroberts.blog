@@ -2,7 +2,7 @@
 tags:
   - books
 title: How to Win Friends and Influence People
-author: Dale Carnagie
+author: Dale Carnegie
 genre: Business
 year_read: 2019
 rating: 5

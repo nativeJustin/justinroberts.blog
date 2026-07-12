@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Never Split the Diffrence"
+title: "Never Split the Difference"
 author: "Chris Voss"
 genre: "Personal Growth"
 year_read: 2019

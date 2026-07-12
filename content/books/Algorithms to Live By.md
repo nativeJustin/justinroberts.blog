@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Algorithms to Live By"
-author: "Brian Chistenson"
+author: "Brian Christian"
 genre: "Science"
 year_read: 2020
 rating: 3

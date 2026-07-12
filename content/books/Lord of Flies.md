@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Lord of Flies"
+title: "Lord of the Flies"
 author: "William Golding"
 genre: "Fiction"
 year_read: 2019

@@ -2,7 +2,7 @@
 tags:
   - books
 title: Building a Second Brain
-author: Thiago Forte
+author: Tiago Forte
 genre: Productivity
 year_read: 2023
 rating: 5

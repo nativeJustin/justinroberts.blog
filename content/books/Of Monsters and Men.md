@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Of Monsters and Men"
+title: "Monsters of Men"
 author: "Patrick Ness"
 genre: "Fiction"
 year_read: 2021

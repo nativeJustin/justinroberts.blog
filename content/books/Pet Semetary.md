@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Pet Semetary"
+title: "Pet Sematary"
 author: "Stephen King"
 genre: "Fiction"
 year_read: 2022

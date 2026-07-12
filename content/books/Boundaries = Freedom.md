@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Boundaries = Freedom"
-author: "Joseph Ngyuen"
+author: "Joseph Nguyen"
 genre: "Psychology"
 year_read: 2024
 rating: 4

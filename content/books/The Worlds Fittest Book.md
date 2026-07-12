@@ -1,8 +1,8 @@
 ---
 tags:
   - books
-title: "The Worlds Fittest Book"
-author: "Ross Edgely"
+title: "The World's Fittest Book"
+author: "Ross Edgley"
 genre: "Fitness"
 year_read: 2021
 rating: 4

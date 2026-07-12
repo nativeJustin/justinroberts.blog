@@ -2,7 +2,7 @@
 tags:
   - books
 title: Tribe
-author: Sebastion Junger
+author: Sebastian Junger
 genre: Psychology
 year_read: 2019
 rating: 4

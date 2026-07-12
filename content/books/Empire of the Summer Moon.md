@@ -2,7 +2,7 @@
 tags:
   - books
 title: Empire of the Summer Moon
-author: S.C Gwynee
+author: S.C. Gwynne
 genre: History
 year_read: 2022
 rating: 4

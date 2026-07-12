@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Astrophysics for People in a Hurry"
-author: "Neil Degrasse Tyson"
+author: "Neil deGrasse Tyson"
 genre: "Non-fiction"
 year_read: 2023
 rating: 5

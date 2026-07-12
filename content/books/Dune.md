@@ -2,7 +2,7 @@
 tags:
   - books
 title: Dune
-author: Frank Hebert
+author: Frank Herbert
 genre: Fiction
 year_read: 2021
 rating: 3

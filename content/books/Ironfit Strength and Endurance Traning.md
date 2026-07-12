@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: "Ironfit Strength and Endurance Traning"
+title: "Ironfit Strength and Endurance Training"
 author: "Don & Melanie Fink"
 genre: "Fitness"
 year_read: 2019

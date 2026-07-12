@@ -2,7 +2,7 @@
 tags:
   - books
 title: "The Effective Science of Communication"
-author: "Ian Tuhvosky"
+author: "Ian Tuhovsky"
 genre: "Personal Growth"
 year_read: 2019
 rating: 3

@@ -2,7 +2,7 @@
 tags:
   - books
 title: Sustain
-author: Lucy Barthlomew
+author: Lucy Bartholomew
 genre: Cooking
 year_read: 2022
 rating: 4

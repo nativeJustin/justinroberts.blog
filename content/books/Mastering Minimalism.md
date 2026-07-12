@@ -2,7 +2,7 @@
 tags:
   - books
 title: Mastering Minimalism
-author: Emily Joesphine
+author: Emily Josephine
 genre: Personal Growth
 year_read: 2021
 rating: 3

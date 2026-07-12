@@ -2,7 +2,7 @@
 tags:
   - books
 title: "A New Earth"
-author: "Eckert Tolle"
+author: "Eckhart Tolle"
 genre: "Personal Growth"
 year_read: 2019
 rating: 2

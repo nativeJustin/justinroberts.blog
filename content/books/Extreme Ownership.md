@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Extreme Ownership"
-author: "Jocko Wilink"
+author: "Jocko Willink"
 genre: "Leadership"
 year_read: 2019
 rating: 4

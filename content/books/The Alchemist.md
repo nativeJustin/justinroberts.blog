@@ -2,7 +2,7 @@
 tags:
   - books
 title: "The Alchemist"
-author: "Paulo Cohelo"
+author: "Paulo Coelho"
 genre: "Fiction"
 year_read: 2019
 rating: 4

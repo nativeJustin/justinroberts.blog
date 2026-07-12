@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Budgeting 101"
-author: "Michelle Cagan"
+author: "Michele Cagan"
 genre: "Finance"
 year_read: 2024
 rating: 5

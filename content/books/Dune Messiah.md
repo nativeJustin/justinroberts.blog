@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Dune: Messiah"
-author: "Brian Hebert"
+author: "Frank Herbert"
 genre: "Fiction"
 year_read: 2025
 rating: 4

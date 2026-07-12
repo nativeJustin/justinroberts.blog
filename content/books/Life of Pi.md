@@ -2,7 +2,7 @@
 tags:
   - books
 title: "Life of Pi"
-author: "Yann Martell"
+author: "Yann Martel"
 genre: "Fiction"
 year_read: 2019
 rating: 4

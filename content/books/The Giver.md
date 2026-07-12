@@ -2,7 +2,7 @@
 tags:
   - books
 title: The Giver
-author: Louis Lowry
+author: Lois Lowry
 genre: Fiction
 year_read: 2019
 rating: 5

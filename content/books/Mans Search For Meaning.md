@@ -1,7 +1,7 @@
 ---
 tags:
   - books
-title: Mans Search For Meaning
+title: Man's Search for Meaning
 author: Viktor E Frankl
 genre: Psychology
 year_read: 2019

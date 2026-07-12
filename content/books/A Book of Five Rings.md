@@ -2,7 +2,7 @@
 tags:
   - books
 title: "A Book of Five Rings"
-author: "Miyamoto Mushashi"
+author: "Miyamoto Musashi"
 genre: "Personal Growth"
 year_read: 2019
 rating: 4

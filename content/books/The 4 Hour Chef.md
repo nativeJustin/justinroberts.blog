@@ -2,7 +2,7 @@
 tags:
   - books
 title: The 4 Hour Chef
-author: Tim Ferris
+author: Tim Ferriss
 genre: Cooking
 year_read: 2020
 rating: 4

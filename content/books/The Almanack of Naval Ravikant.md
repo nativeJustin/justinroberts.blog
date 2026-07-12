@@ -2,7 +2,7 @@
 tags:
   - books
 title: The Almanack of Naval Ravikant
-author: Eric Jorgennson
+author: Eric Jorgenson
 genre: Non-fiction
 year_read: 2025
 rating: 5

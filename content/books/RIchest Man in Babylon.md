@@ -1,8 +1,8 @@
 ---
 tags:
   - books
-title: RIchest Man in Babylon
-author: George S Carlson
+title: Richest Man in Babylon
+author: George S. Clason
 genre: Business
 year_read: 2019
 rating: 4

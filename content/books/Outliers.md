@@ -2,7 +2,7 @@
 tags:
   - books
 title: Outliers
-author: Matthew Gladwell
+author: Malcolm Gladwell
 genre: Psychology
 year_read: 2019
 rating: 3

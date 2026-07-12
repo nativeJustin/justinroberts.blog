@@ -2,7 +2,7 @@
 tags:
   - books
 title: Helter Skelter
-author: Vincent Bugolsi
+author: Vincent Bugliosi
 genre: Fiction
 year_read: 2020
 rating: 4
