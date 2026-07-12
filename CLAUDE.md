@@ -128,6 +128,22 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   requests get rejected as untrusted origins. Comments posted under the old giscus setup live in
   this repo's GitHub Discussions (category "Comments") and were **not** migrated — the giscus
   GitHub App/Discussions category can be disabled independently, that's not tied to this change.
+- **Dynamically-injected `<head>` elements need `spa-preserve`.** Quartz's SPA router
+  (`quartz/components/scripts/spa.inline.ts`) strips every `<head>` element without an explicit
+  `spa-preserve` attribute on each in-app navigation, then repopulates `<head>` from whatever the
+  newly-fetched page's own `<head>` contains. Any `<link>`/`<script>` an inline script inserts at
+  runtime (as `comments.inline.ts` does for Waline's CSS/JS) needs `spa-preserve` set explicitly,
+  or it survives exactly one page load and silently disappears on the next navigation. This broke
+  Waline's styling after the first click to a new post and looked like a cold-start timing bug
+  rather than a missing-element bug — see `notes/bug-lore.md` for the full debugging story.
+  Quartz's own server-rendered `<script>`/`<link>` tags (`quartz/util/resources.tsx`) already set
+  this correctly; anything injected client-side has to do it manually.
+- **External links open in a new tab** via `Plugin.CrawlLinks({ openLinksInNewTab: true })` in
+  `quartz.config.ts`, paired with `rel="noopener noreferrer"` added directly in
+  `quartz/plugins/transformers/links.ts` (upstream Quartz's `CrawlLinks` sets `target="_blank"`
+  without it, a reverse-tabnabbing gap fixed here rather than just worked around). This only
+  affects links inside markdown content — the footer's links (`Footer.tsx`) are hardcoded JSX and
+  bypass this transformer entirely, so they still open in the same tab.
 - **RSS feed** (`/index.xml`, auto-discoverable via a `<link rel="alternate">` tag Quartz emits on
   every page) is scoped in `quartz/plugins/emitters/contentIndex.tsx` to exclude `books/*`,
   `about`, `index`, and any `*/index` folder page (e.g. `writing/index`) — those are real pages
@@ -211,6 +227,12 @@ from Obsidian instead of going through a coding session or GitHub's web UI.
   `public/` HTML for the specific thing you changed) before pushing — Cloudflare's build is the
   only CI here, so a broken build fails silently from a chat-only perspective until someone
   checks the dashboard.
+- **SEO**: the site is submitted to both Google Search Console and Bing Webmaster Tools (Google
+  verified via a DNS TXT record in Cloudflare; Bing set up via its "import from Google Search
+  Console" option), with `sitemap.xml` submitted to both. None of this is reflected anywhere in
+  this repo, and new posts aren't auto-submitted for indexing — after publishing something new,
+  requesting indexing of that specific URL via Search Console's URL Inspection tool gets it
+  crawled much faster than waiting for a routine crawl to find it.
 
 ## Working conventions established in this project
 
@@ -250,3 +272,10 @@ from Obsidian instead of going through a coding session or GitHub's web UI.
   a price — found while drafting "The Workout App I Could Finally Connect to AI".
 - `.gitignore` didn't exist in this repo until it was added alongside the Obsidian vault setup —
   covers `node_modules/`, `public/`, `quartz/.quartz-cache/`, `.obsidian/`, and `.DS_Store`.
+- **`notes/` holds project documentation that isn't user-facing content**: `notes/bug-lore.md` for
+  non-obvious bugs worth remembering (root cause, why they were hard to diagnose), and
+  `notes/best-practices.md` for the structural/markdown conventions `content/writing/` posts
+  should follow (headers vs. prose, nesting, section closings). Deliberately not named `docs/` —
+  that name is already claimed by the `npm run docs` script (`quartz build --serve -d docs`),
+  which wipes its output directory on every run and would silently delete anything committed
+  there.
