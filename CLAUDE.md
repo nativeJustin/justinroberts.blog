@@ -100,15 +100,34 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   not a real inbox — set up outside this repo, in the Cloudflare dashboard. `footer ul` gets
   `flex-wrap` added in `custom.scss` (not the vendored `footer.scss`) since the 5-item row is more
   likely to overflow on narrow viewports than the original 4-item version was.
-- **Comments** (`quartz/components/Comments.tsx`, giscus — vendored with upstream Quartz but not
-  wired in by default) is turned on in `sharedPageComponents.afterBody` in `quartz.layout.ts`,
-  gated by a local `isCommentablePage()` check: comments only show on real posts, excluding
-  `index`, `about`, `books/*`, `tags/*`, and any `*/index` folder page. This exclusion list is a
-  separate implementation (not shared code) from the RSS exclusion list in `contentIndex.tsx`
-  below, but both now cover the same `*/index` folder-page case — if the definition of "real post"
-  changes, both lists need updating, they're not DRY. giscus config (`repo`, `repoId`, `category`,
-  `categoryId`) points at this repo's own GitHub Discussions (category `Comments`, created for this
-  purpose); the giscus GitHub App is installed on this repo and Discussions is enabled.
+- **Comments** (`quartz/components/Comments.tsx`, custom-written, not upstream Quartz) is turned
+  on in `sharedPageComponents.afterBody` in `quartz.layout.ts`, gated by a local
+  `isCommentablePage()` check: comments only show on real posts, excluding `index`, `about`,
+  `books/*`, `tags/*`, and any `*/index` folder page. This exclusion list is a separate
+  implementation (not shared code) from the RSS exclusion list in `contentIndex.tsx` below, but
+  both now cover the same `*/index` folder-page case — if the definition of "real post" changes,
+  both lists need updating, they're not DRY. Comments run on [Waline](https://waline.js.org/), not
+  giscus — guest commenting needs only a nickname/email, no GitHub account required. The Waline
+  server is a **separate Vercel project** (`justinroberts-blog-comments`, forked from Waline's own
+  official Vercel deploy template — not this repo), backed by Neon Postgres via Vercel's Storage
+  Marketplace integration. All of that (env vars, the Postgres database, the admin account) lives
+  entirely outside this repo — don't go looking for connection strings or schema files here. The
+  `serverURL` passed to `Component.Comments({ serverURL: ... })` in `quartz.layout.ts` is the only
+  link between this repo and that infrastructure. Waline's client JS/CSS are **not** bundled by
+  Quartz's build — `comments.inline.ts` injects `<script>`/`<link>` tags pointing at jsdelivr's CDN
+  at runtime, only on pages that render the `#waline` mount point, mirroring exactly how the old
+  giscus script worked (this was a deliberate choice over an npm-bundled `@waline/client` import,
+  to avoid adding Vue/`@vueuse/core`/`marked` to the shared `postscript.js` loaded on every page,
+  including the 146 `books/*` pages that don't show comments). Dark mode is simpler than giscus's
+  was: Waline takes a `dark: 'html[saved-theme="dark"]'` selector once at `init()` and handles
+  live theme switching via plain CSS — no `themechange` listener or cross-origin `postMessage`
+  needed, since Waline mounts directly into the page instead of a cross-origin iframe. The
+  Vercel/Neon project's `SECURE_DOMAINS` env var must list **both** `justinroberts.blog` and the
+  Waline server's own domain (`justinroberts-blog-comments.vercel.app`) — Waline's admin UI is
+  served from its own domain, so without listing that domain too, even the admin registration/login
+  requests get rejected as untrusted origins. Comments posted under the old giscus setup live in
+  this repo's GitHub Discussions (category "Comments") and were **not** migrated — the giscus
+  GitHub App/Discussions category can be disabled independently, that's not tied to this change.
 - **RSS feed** (`/index.xml`, auto-discoverable via a `<link rel="alternate">` tag Quartz emits on
   every page) is scoped in `quartz/plugins/emitters/contentIndex.tsx` to exclude `books/*`,
   `about`, `index`, and any `*/index` folder page (e.g. `writing/index`) — those are real pages
