@@ -18,14 +18,7 @@ const isCommentablePage = (slug: string) =>
   !slug.endsWith("/index")
 
 const Comments = Component.Comments({
-  provider: "giscus",
-  options: {
-    repo: "nativeJustin/justinroberts.blog",
-    repoId: "R_kgDOTUmAHQ",
-    category: "Comments",
-    categoryId: "DIC_kwDOTUmAHc4DA78m",
-    mapping: "pathname",
-  },
+  serverURL: "https://justinroberts-blog-comments.vercel.app",
 })
 
 // components shared across all pages
