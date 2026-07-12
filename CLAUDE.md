@@ -49,7 +49,12 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
 - Custom components (not part of upstream Quartz, written for this site):
   - `quartz/components/bookUtils.tsx` — shared book-card rendering (`BookCard`), cover-path
     resolution (`coverSrc`), and year-read sorting helpers. Used by both `BookGrid` and
-    `HomeHighlights` — extend this rather than duplicating card markup again.
+    `HomeHighlights` — extend this rather than duplicating card markup again. A book with
+    `status: reading` and no `year_read` renders a "Reading" badge instead of a blank year on the
+    card, and `byYearReadDescending` sorts those books to the very top of the grid (ahead of dated
+    books) — since "currently reading" is more recent than anything already finished. Books that
+    are `status: reading` but already have a `year_read` (e.g. logged prematurely) are left
+    untouched by both behaviors and just sort/display by their year as normal.
   - `quartz/components/BookGrid.tsx` — the full card grid on `/books/`. Wired into
     `quartz/components/pages/FolderContent.tsx` with a hard check for `fileData.slug ===
     "books/index"` (folder pages carry the `/index` suffix internally even though the URL is
@@ -220,5 +225,9 @@ from Obsidian instead of going through a coding session or GitHub's web UI.
   in different words just to land it — pick the one spot where the idea should pay off and cut the
   earlier restatement instead. When revising existing text, preserve content/structure and only
   change voice; when drafting new copy, the full checklist applies.
+- **Dollar signs in post body text get parsed as KaTeX math**, not literal currency, if two `$`
+  appear in the same paragraph (e.g. "costs about $2.99 per month, or roughly $24 per year"
+  rendered as italic math between the two `$` signs). Escape them as `\$` whenever a post mentions
+  a price — found while drafting "The Workout App I Could Finally Connect to AI".
 - `.gitignore` didn't exist in this repo until it was added alongside the Obsidian vault setup —
   covers `node_modules/`, `public/`, `quartz/.quartz-cache/`, `.obsidian/`, and `.DS_Store`.
