@@ -107,7 +107,7 @@ These are the products I've settled on after years of training. None of them are
 
 Keeps all of my dirty gear contained inside my gym bag.
 
-https://a.co/d/0f1n4von
+https://a.co/d/03kPXS7Y
 
 ### Fitcent Heart Rate Monitor Armband
 
