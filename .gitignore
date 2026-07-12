@@ -3,3 +3,4 @@ public/
 quartz/.quartz-cache/
 .obsidian/
 .DS_Store
+tsconfig.tsbuildinfo
