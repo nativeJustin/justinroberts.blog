@@ -108,6 +108,6 @@ These are the products I've settled on after years of training. None of them are
 
 - **Heavy-Duty Laundry Bag.** Keeps all of my dirty gear contained inside my gym bag. [View on Amazon](https://a.co/d/03kPXS7Y)
 - **Fitcent Heart Rate Monitor Armband.** I originally bought it because chest straps aren't practical for Jiu Jitsu. It's been the best option I've found for tracking heart rate while rolling. [View on Amazon](https://a.co/d/0dUAYALr)
-- **Retainer Cleaning Tablets.** I use these to soak my mouth guard after every class. [View on Amazon](https://a.co/d/07404JnH)
+- **Retainer Cleaner Powder.** I use this to soak my mouth guard after every class. [View on Amazon](https://a.co/d/07404JnH)
 - **Meyer's All-Purpose Cleaner.** For wiping down my heart rate monitor sensor and phone. [View on Amazon](https://a.co/d/0iGXbdBB)
 - **Drying Rack.** I use this to hang my gi, belt, rash guard, and shorts overnight. [View on Amazon](https://a.co/d/08BSuR0c)
