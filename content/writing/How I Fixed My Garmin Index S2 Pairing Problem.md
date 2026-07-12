@@ -4,6 +4,7 @@ tags:
   - garmin
   - fitness
 date: 2026-07-12
+description: How I fixed my Garmin Index S2 scale stuck in a Bluetooth pairing loop with Garmin Connect, the extra reset step that finally worked.
 ---
 
 I ran into an issue with my Garmin Index S2 scale last month. Weight measurements were still showing up sometimes, but syncing became inconsistent. Some weigh-ins would appear in Garmin Connect while others never made it over.

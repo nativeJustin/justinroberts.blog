@@ -6,7 +6,7 @@ title: Justin Roberts
 
 Welcome.
 
-This is where I write about AI, software engineering, Brazilian Jiu-Jitsu, fitness, books, and the ideas I'm exploring along the way. You'll find technical deep dives, practical guides, training notes, and the occasional thought worth sharing.
+This is where I write about AI, software, Brazilian Jiu-Jitsu, fitness, books, and the ideas I'm exploring along the way. You'll find technical deep dives, practical guides, training notes, and the occasional thought worth sharing.
 
 If something here helps you build, learn, or think a little differently, then it's done its job.
 

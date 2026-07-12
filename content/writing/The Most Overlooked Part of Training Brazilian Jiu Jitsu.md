@@ -3,6 +3,7 @@ title: "The Most Overlooked Part of Training Brazilian Jiu Jitsu"
 tags:
   - bjj
 date: 2026-07-12
+description: My post-class Brazilian Jiu Jitsu hygiene routine, how I clean my gi, gear, and gym bag after every class to avoid ringworm and staph.
 ---
 
 Everyone wants to talk about submissions, guard passing, and strength training. Almost nobody talks about what happens after class.

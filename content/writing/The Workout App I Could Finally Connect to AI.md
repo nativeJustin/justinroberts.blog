@@ -4,6 +4,7 @@ date: 2026-07-11
 tags:
   - ai
   - fitness
+description: How I connected Claude to my workout tracking using the Hevy API, building an AI personal trainer that plans, logs, and reviews my training.
 ---
 
 For the last week or so I've been experimenting with using AI to manage my strength training.

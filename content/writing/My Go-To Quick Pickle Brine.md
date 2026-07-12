@@ -3,6 +3,7 @@ title: "My Go-To Quick Pickle Brine"
 tags:
   - recipes
 date: 2026-07-11
+description: A simple quick pickle brine recipe for cucumbers, onions, carrots, and jalapeños, ready to eat in 24 hours.
 ---
 
 I make a batch of this quick pickle brine all the time. It's simple, takes just a few minutes, and works well with cucumbers, red onions, carrots, jalapeños, and just about any vegetable that benefits from a little acidity and crunch.

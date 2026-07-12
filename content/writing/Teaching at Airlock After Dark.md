@@ -3,6 +3,7 @@ title: "Teaching at Airlock After Dark"
 tags:
   - bjj
 date: 2026-07-10
+description: Notes on teaching a BJJ seminar at 10th Planet Airlock, covering the ninja roll, darces, and the mounted anaconda choke.
 ---
 
 Back in March I got the chance to teach at Airlock After Dark, 10th Planet Airlock's Thursday night seminar series in Bastrop. Every week they bring in a different instructor to teach something from their game, then everyone sticks around to roll. This time I was the one on the mat instead of sitting in the crowd.

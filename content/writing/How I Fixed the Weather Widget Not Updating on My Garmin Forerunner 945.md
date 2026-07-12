@@ -4,6 +4,7 @@ tags:
   - garmin
   - fitness
 date: 2026-07-12
+description: How I fixed the GPS question mark and weather widget not updating on my Garmin Forerunner 945 after a device replacement.
 ---
 
 I recently had to replace my Garmin Forerunner 945 after moisture developed underneath the display. The watch was about three years old, so it was outside the standard warranty period. I reached out to Garmin support anyway, and they offered me a replacement for $140. It wasn't free, but it was a lot cheaper than buying another watch.

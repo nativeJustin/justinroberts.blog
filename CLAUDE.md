@@ -270,6 +270,18 @@ from Obsidian instead of going through a coding session or GitHub's web UI.
   appear in the same paragraph (e.g. "costs about $2.99 per month, or roughly $24 per year"
   rendered as italic math between the two `$` signs). Escape them as `\$` whenever a post mentions
   a price — found while drafting "The Workout App I Could Finally Connect to AI".
+- **Every `content/writing/` post should have a frontmatter `description`.** Quartz's
+  `Description` transformer plugin (`quartz/plugins/transformers/description.ts`) uses it verbatim
+  for both the `<meta name="description">` and `og:description` tags; without it, Quartz falls
+  back to auto-extracting the post's opening sentences, which usually don't match what someone
+  would actually search for. Write it targeting realistic search intent/keywords rather than
+  echoing the title — the title/H1 can stay curiosity-driven or clever ("The Most Overlooked Part
+  of Training Brazilian Jiu Jitsu"), while the description states plainly what the post covers
+  ("My post-class Brazilian Jiu Jitsu hygiene routine..."). Same voice rules as post body prose
+  apply (no em-dashes, no hollow intensifiers). Keep it roughly under 155 characters so it doesn't
+  get truncated in search results. This only applies to `content/writing/` posts — book pages
+  (`content/books/*.md`) are deliberately excluded (see "Content pipeline" above: their body is
+  just a cover image, so a hand-written description isn't worth the effort across 140+ thin pages).
 - `.gitignore` didn't exist in this repo until it was added alongside the Obsidian vault setup —
   covers `node_modules/`, `public/`, `quartz/.quartz-cache/`, `.obsidian/`, and `.DS_Store`.
 - **`notes/` holds project documentation that isn't user-facing content**: `notes/bug-lore.md` for
