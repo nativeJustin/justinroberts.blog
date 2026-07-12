@@ -19,6 +19,18 @@ export function yearRead(page: QuartzPluginData): number | undefined {
 export function byYearReadDescending(f1: QuartzPluginData, f2: QuartzPluginData): number {
   const y1 = yearRead(f1)
   const y2 = yearRead(f2)
+  const reading1 = f1.frontmatter?.status === "reading" && y1 === undefined
+  const reading2 = f2.frontmatter?.status === "reading" && y2 === undefined
+
+  if (reading1 || reading2) {
+    if (reading1 && reading2) {
+      const t1 = (f1.frontmatter?.title as string)?.toLowerCase() ?? ""
+      const t2 = (f2.frontmatter?.title as string)?.toLowerCase() ?? ""
+      return t1.localeCompare(t2)
+    }
+    return reading1 ? -1 : 1
+  }
+
   if (y1 !== undefined && y2 !== undefined) return y2 - y1
   if (y1 !== undefined) return -1
   if (y2 !== undefined) return 1
@@ -33,6 +45,7 @@ export function BookCard({ from, book }: { from: FullSlug; book: QuartzPluginDat
   const title = (book.frontmatter?.title as string) ?? book.slug
   const author = book.frontmatter?.author as string | undefined
   const rating = book.frontmatter?.rating as number | undefined
+  const status = book.frontmatter?.status as string | undefined
   const year = yearRead(book)
 
   return (
@@ -44,7 +57,11 @@ export function BookCard({ from, book }: { from: FullSlug; book: QuartzPluginDat
       )}
       <div class="book-card-title">{title}</div>
       {author && <div class="book-card-author">{author}</div>}
-      {year !== undefined && <div class="book-card-year">{year}</div>}
+      {year !== undefined ? (
+        <div class="book-card-year">{year}</div>
+      ) : (
+        status === "reading" && <div class="book-card-status">Reading</div>
+      )}
       {typeof rating === "number" &&
         (() => {
           const filled = Math.max(0, Math.min(5, Math.round(rating)))
@@ -90,6 +107,12 @@ export const bookCardCss = `
 .book-card-year {
   color: var(--gray);
   font-size: 0.75rem;
+}
+
+.book-card-status {
+  color: var(--secondary);
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .book-card-rating {
