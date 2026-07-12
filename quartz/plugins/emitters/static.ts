@@ -18,6 +18,15 @@ export const Static: QuartzEmitterPlugin = () => ({
       await fs.promises.copyFile(src, dest)
       yield dest
     }
+
+    // Cloudflare reads `_headers` from the root of the deployed assets directory,
+    // not from `static/` — copy it there directly if present.
+    const headersSrc = joinSegments(QUARTZ, "_headers") as FilePath
+    if (fs.existsSync(headersSrc)) {
+      const headersDest = joinSegments(argv.output, "_headers") as FilePath
+      await fs.promises.copyFile(headersSrc, headersDest)
+      yield headersDest
+    }
   },
   async *partialEmit() {},
 })
