@@ -96,6 +96,9 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
 
                 if (isExternal && opts.openLinksInNewTab) {
                   node.properties.target = "_blank"
+                  // without noopener, the new tab can use window.opener to
+                  // navigate this blog's original tab to an arbitrary URL
+                  node.properties.rel = "noopener noreferrer"
                 }
 
                 // don't process external links or intra-document anchors
