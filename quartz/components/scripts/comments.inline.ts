@@ -24,6 +24,13 @@ const ensureWalineStyles = (): Promise<void> => {
     const stylesheet = document.createElement("link")
     stylesheet.rel = "stylesheet"
     stylesheet.href = WALINE_CSS_URL
+    // Quartz's SPA router (spa.inline.ts) strips every <head> element without this
+    // attribute on each navigation, since it doesn't know this <link> is ours to keep.
+    // Without it, the stylesheet vanishes after the first page and every subsequent
+    // page renders the widget unstyled (our own load-promise cache still thinks it's
+    // loaded, since the JS module state survives navigation even though the DOM node
+    // doesn't).
+    stylesheet.setAttribute("spa-preserve", "")
     stylesheet.onload = () => resolve()
     stylesheet.onerror = () => reject(new Error("Failed to load Waline stylesheet"))
     document.head.appendChild(stylesheet)
