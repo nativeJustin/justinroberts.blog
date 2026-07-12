@@ -23,6 +23,6 @@ I make a batch of this quick pickle brine all the time. It's simple, takes just 
 5. Let the jar cool to room temperature before placing it in the refrigerator.
 6. Refrigerate for at least 24 hours before eating for the best flavor.
 
-## Quick Tip
+## Quick tip
 
 If you're short on time, you can skip the saucepan entirely. Boil the water by itself, then pour it directly into your jar with the vinegar, cane sugar, and kosher salt. Give it a good stir until everything dissolves. It's one less dish to wash, and I've found it works just as well.
