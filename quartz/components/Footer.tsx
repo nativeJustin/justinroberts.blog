@@ -2,6 +2,8 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
+// @ts-ignore
+import script from "./scripts/footer.inline"
 
 interface Options {
   links: Record<string, string>
@@ -20,7 +22,13 @@ export default ((opts?: Options) => {
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>
-              <a href={link}>{text}</a>
+              {link.startsWith("mailto:") ? (
+                <a href={link} class="footer-copy-email" data-email={link.slice("mailto:".length)}>
+                  {text}
+                </a>
+              ) : (
+                <a href={link}>{text}</a>
+              )}
             </li>
           ))}
         </ul>
@@ -29,5 +37,6 @@ export default ((opts?: Options) => {
   }
 
   Footer.css = style
+  Footer.afterDOMLoaded = script
   return Footer
 }) satisfies QuartzComponentConstructor

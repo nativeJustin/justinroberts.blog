@@ -19,6 +19,20 @@ PageTitle.css = `
   margin: 0;
   font-family: var(--titleFont);
 }
+
+/* base.scss sets text-wrap: pretty on all <a> tags for prose readability;
+   since white-space is a shorthand that includes text-wrap, that rule
+   (an explicit declaration on the anchor itself) wins over inheriting
+   nowrap from .page-title, so it has to be overridden here directly. */
+.page-title a {
+  white-space: nowrap;
+}
+
+@media all and (max-width: 800px) {
+  .page-title {
+    font-size: 1.2rem;
+  }
+}
 `
 
 export default (() => PageTitle) satisfies QuartzComponentConstructor

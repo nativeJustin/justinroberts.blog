@@ -66,3 +66,92 @@ worse than the first. Any bug report involving Quartz + dynamically-injected
 `quartz/components/scripts/spa.inline.ts` (the mechanism, not the bug),
 `quartz/util/resources.tsx` (existing correct usage of `spa-preserve` to
 crib from).
+
+## Explorer sidebar wouldn't scroll, and wheel input was silently swallowed
+
+**Symptom:** with 146+ books, expanding the Explorer's folder list on desktop
+just grew the sidebar past the bottom of the viewport instead of scrolling
+internally — the rest of the list was simply unreachable. After a first fix
+made the list *technically* scrollable (verified by setting `scrollTop`
+directly and by Playwright's synthetic `mouse.wheel()` at a wide viewport),
+real mouse-wheel/trackpad scrolling in an actual browser still did nothing
+when the cursor was resting over a book link inside an open folder.
+
+**Root cause, part 1 (no bounded height):** `.explorer` and `.explorer-content`
+had no height constraint on desktop — `flex: 0 1 auto` with default
+`min-height: auto` means a flex item won't shrink below its content's
+intrinsic size. With no ancestor clipping it, the sidebar just grew as tall
+as the full list, and the `overflow-y: auto` already present on
+`.explorer-content` never had a bounded box to scroll within. Fix: give
+`.explorer` and `.explorer-content` `flex: 1 1 auto; min-height: 0;` inside
+`@media all and not ($mobile)`, so they fill (and are clipped to) the
+remaining height in the sidebar's `height: 100vh` flex column.
+
+**Root cause, part 2 (scroll chaining blocked):** even after part 1, real
+wheel input still didn't move the list — only programmatic `scrollTop`
+writes did, which is a false-positive signal (`element.scrollTop = n` works
+on any non-`visible`-overflow element regardless of whether user-driven
+scroll can reach it; only a genuine `mouse.wheel()` simulation exercises the
+real code path). The actual blocker: `overscroll-behavior: contain` was
+applied via `.explorer-content { & ul { ... } }` — a descendant selector
+that matches *every* nested `<ul>`, not just the top-level scrollable list.
+Each per-folder list (`.folder-outer > ul`) also has `overflow: hidden`
+(needed for its own open/closed grid-accordion animation), which is enough
+to make it a "scroll container" in the CSS Overscroll Behavior spec's eyes —
+so `overscroll-behavior: contain` on *that* element tells the browser not to
+chain unconsumed scroll delta past it, even though the element itself never
+visibly scrolls anything. Any wheel event that started over a link inside an
+open folder got absorbed right there and never reached the real scrolling
+ancestor (`.explorer-ul`). Fix: scope the rule to `.explorer-content > ul`
+(direct child only) instead of `.explorer-content ul` (all descendants).
+
+**Why this was hard to diagnose:** `element.scrollTop = n` succeeding is not
+proof that user-driven scrolling works — it will happily move the scroll
+position of an `overflow: hidden` element too. Any verification of "is this
+actually scrollable" needs a real (or `page.mouse.wheel()`-simulated) wheel
+event with the cursor positioned over the actual nested content a user would
+hover, not just a JS-side scrollTop assertion.
+
+**Where:** `quartz/components/styles/explorer.scss`.
+
+## Mobile header: site title wrapped to two lines despite `white-space: nowrap`
+
+**Symptom:** `.page-title` ("Justin Roberts" in the sidebar/mobile header)
+wrapped onto two lines on narrow viewports even after setting
+`white-space: nowrap` directly on `.page-title`. The nowrap declaration was
+visibly present and correctly scoped in the compiled CSS, and
+`getComputedStyle(pageTitleEl).whiteSpace` even reported `"nowrap"` — yet
+the actual `<a>` text node inside it still wrapped.
+
+**Root cause:** `quartz/styles/base.scss` has a global rule —
+`a, p, ul, ... { overflow-wrap: break-word; text-wrap: pretty; }` — applied
+site-wide for prose readability. In modern CSS, `white-space` is a shorthand
+for the `white-space-collapse` and `text-wrap` longhands. Setting
+`text-wrap: pretty` directly on the `<a>` element resets just the
+`text-wrap` component of its own computed `white-space` back to wrapping —
+and since inheritance only applies to properties with *no* explicit
+declaration on the element itself, this explicit (if indirect, via a
+shorthand-adjacent longhand) declaration on the `<a>` wins over whatever its
+parent `.page-title` specifies, regardless of selector specificity between
+the two rules. Checking `getComputedStyle` on the *parent* (`.page-title`)
+showed "nowrap" correctly the whole time; the bug only showed up when
+checking the computed style of the child `<a>` that actually contains the
+text.
+
+**Fix:** add a rule that targets the anchor directly —
+`.page-title a { white-space: nowrap; }` — so it has an explicit declaration
+of its own that overrides the global `a { text-wrap: pretty }` rule (higher
+specificity than the bare `a` selector, and no longer relying on
+inheritance).
+
+**Why this was hard to diagnose:** nothing in the DOM or computed styles of
+the element you'd naturally inspect first (`.page-title`) was wrong — the
+override lived on a *child* element via a longhand of a property (`text-wrap`)
+that doesn't read as obviously related to `white-space` unless you already
+know they're the same shorthand family. Any "I set `white-space: nowrap` and
+it's still wrapping" bug on this site should check for a `text-wrap` (or
+`white-space-collapse`) declaration on the specific text-containing element,
+not just its ancestors.
+
+**Where:** `quartz/components/PageTitle.tsx`, `quartz/styles/base.scss`
+(the global `text-wrap: pretty` rule, not itself a bug).

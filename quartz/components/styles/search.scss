@@ -7,6 +7,13 @@
     flex-grow: 0.3;
   }
 
+  // Below this, the search pill's "Search" label leaves no room for the
+  // mobile header's other icons (dark mode, reader mode) without clipping —
+  // drop the label and let the pill shrink to an icon-only button instead.
+  @media all and (max-width: 375px) {
+    min-width: 0;
+  }
+
   & > .search-button {
     background-color: transparent;
     border: 1px var(--lightgray) solid;
@@ -22,9 +29,17 @@
     white-space: nowrap;
     width: 100%;
 
+    @media all and (max-width: 375px) {
+      padding: 0 0.5rem;
+    }
+
     & > p {
       display: inline;
       color: var(--gray);
+
+      @media all and (max-width: 375px) {
+        display: none;
+      }
     }
 
     & svg {

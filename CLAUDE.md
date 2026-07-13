@@ -82,6 +82,26 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
 - **Explorer sidebar** (`quartz.layout.ts`, `explorerFilter`) excludes `about` and `tags` from the
   nav tree. `/about` is still a real, linkable page — just reachable via the footer link instead
   of the sidebar, since having it in both felt redundant.
+- **Explorer sidebar scrolls internally on desktop** (`quartz/components/styles/explorer.scss`)
+  instead of growing past the viewport — needed once the book library passed 146 entries.
+  `.explorer`/`.explorer-content` get `flex: 1 1 auto; min-height: 0;` under
+  `@media all and not ($mobile)` so they're bounded by the sidebar's `height: 100vh` instead of
+  sizing to their content. Separately, `overscroll-behavior: contain` is scoped to
+  `.explorer-content > ul` (the actual scrolling list) rather than every nested `<ul>` — applying
+  it to the non-scrolling per-folder lists too was silently blocking real wheel/trackpad scroll
+  input from ever reaching the list above them, even though the list was technically scrollable by
+  every other measure. See `notes/bug-lore.md` for the full debugging story (this one has a
+  specific false-positive trap: verifying scroll works via `element.scrollTop = n` isn't
+  sufficient, since that succeeds even when `overflow: hidden` blocks real user input).
+- **Mobile header keeps ReaderMode instead of hiding it**, and stays on one line at any width down
+  to ~320px. Two coordinated fixes: `quartz/components/styles/search.scss` collapses the search
+  box to icon-only below 375px (freeing the room ReaderMode needs so it doesn't clip off-screen),
+  and `quartz/components/PageTitle.tsx` shrinks to `1.2rem` under 800px plus adds
+  `.page-title a { white-space: nowrap; }`. That last rule isn't redundant with the `white-space:
+  nowrap` already on `.page-title` itself — `quartz/styles/base.scss` sets `text-wrap: pretty`
+  (part of the same shorthand family as `white-space`) on all `<a>` tags site-wide for prose
+  readability, which overrides inherited `nowrap` specifically on the anchor unless overridden
+  again at the anchor level. See `notes/bug-lore.md` for why this was non-obvious to debug.
 - **Folder display names in the Explorer** come from that folder's `index.md` frontmatter
   `title`, not the raw directory name (see `FileTrieNode.displayName` in
   `quartz/util/fileTrie.ts` — it prefers the index page's title over the lowercase slug segment).
@@ -93,13 +113,23 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   Coffee (`buymeacoffee.com/justinroberts`), GitHub. Order is deliberate: identity, then how to
   reach out, then how to follow, then how to support, then where the code lives. The email link's
   visible text is the literal address (`hello@justinroberts.blog`, prefixed with a plain-text
-  "Contact:" label), not a generic "Email" label — deliberate, so it's readable/copy-pasteable
-  even on a browser with no default mail client configured (a bare `mailto:` link does nothing
-  visible in that case, which is normal browser behavior, not a bug — don't "fix" it by trying to
-  detect mail client support). `hello@justinroberts.blog` is a Cloudflare Email Routing forward,
-  not a real inbox — set up outside this repo, in the Cloudflare dashboard. `footer ul` gets
-  `flex-wrap` added in `custom.scss` (not the vendored `footer.scss`) since the 5-item row is more
-  likely to overflow on narrow viewports than the original 4-item version was.
+  "Contact:" label), not a generic "Email" label — kept even after the click behavior below was
+  added, so the address is still visible/readable at a glance, not just copyable.
+  `hello@justinroberts.blog` is a Cloudflare Email Routing forward, not a real inbox — set up
+  outside this repo, in the Cloudflare dashboard. `footer ul` gets `flex-wrap` added in
+  `custom.scss` (not the vendored `footer.scss`) since the 5-item row is more likely to overflow
+  on narrow viewports than the original 4-item version was.
+  - **Contact link is click-to-copy, not a bare `mailto:` link.** A bare `mailto:` link does
+    nothing visible if the browser has no default mail client configured (normal browser
+    behavior, not a bug) — that unreliability, not a code defect, is why this was changed.
+    `Footer.tsx` special-cases any footer link whose `href` starts with `mailto:`: it keeps the
+    real `mailto:` href (so right-click "copy link address" and modifier-clicks like cmd/ctrl/shift
+    still work normally) but intercepts a plain left-click via `footer.inline.ts`, which copies
+    just the address (stripped of the "Contact:" label) to the clipboard via
+    `navigator.clipboard.writeText`, swaps the link text to "Copied!" for 1.5s, then reverts. The
+    script re-binds on Quartz's `nav` event (SPA navigation doesn't reload the page) — follows the
+    same pattern as the existing code-block copy button in `clipboard.inline.ts`. This is generic
+    to any `mailto:` link passed into `Footer`'s `links` option, not hardcoded to this one address.
 - **Comments** (`quartz/components/Comments.tsx`, custom-written, not upstream Quartz) is turned
   on in `sharedPageComponents.afterBody` in `quartz.layout.ts`, gated by a local
   `isCommentablePage()` check: comments only show on real posts, excluding `index`, `about`,
