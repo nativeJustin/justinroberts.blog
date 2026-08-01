@@ -245,7 +245,8 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
     }
 
     &:not(.collapsed) {
-      flex: 0 0 34px;
+      flex: 0 0 130px;
+      overflow: visible;
 
       & > .explorer-content {
         transform: translateX(0);
@@ -278,10 +279,25 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       margin: 0;
       padding: 5px;
       z-index: 101;
+      align-items: center;
+      gap: 0.6rem;
 
       .lucide-menu {
         stroke: var(--darkgray);
+        flex-shrink: 0;
       }
+
+      .mobile-explorer-label {
+        display: none;
+        color: var(--darkgray);
+        font-family: var(--headerFont);
+        font-size: 1rem;
+        font-weight: $semiBoldWeight;
+      }
+    }
+
+    &:not(.collapsed) .mobile-explorer-label {
+      display: inline;
     }
   }
 }

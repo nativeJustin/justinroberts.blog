@@ -89,6 +89,10 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
   title opens the folder page and only the arrow toggles its children. `explorer.inline.ts` does
   not automatically expand a folder just because it contains the current page; expansion follows
   the saved arrow state or the configured default state.
+- **The open mobile Explorer labels itself.** `Explorer.tsx` includes an `Explorer` label beside
+  the hamburger, and `explorer.scss` only reveals it while the mobile drawer is open so the closed
+  header stays compact. The open flex item must also be wide enough for the label and override the
+  mobile Explorer's default `overflow: hidden`, or the label exists in the DOM but gets clipped.
 - **Explorer sidebar scrolls internally on desktop** (`quartz/components/styles/explorer.scss`)
   instead of growing past the viewport — needed once the book library passed 146 entries.
   `.explorer`/`.explorer-content` get `flex: 1 1 auto; min-height: 0;` under

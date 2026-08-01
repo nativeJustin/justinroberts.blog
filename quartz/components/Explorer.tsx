@@ -96,6 +96,7 @@ export default ((userOpts?: Partial<Options>) => {
             <line x1="4" x2="20" y1="6" y2="6" />
             <line x1="4" x2="20" y1="18" y2="18" />
           </svg>
+          <span class="mobile-explorer-label">Explorer</span>
         </button>
         <button
           type="button"
