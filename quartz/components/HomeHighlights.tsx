@@ -1,6 +1,7 @@
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { QuartzPluginData } from "../plugins/vfile"
 import { BookCard, bookCardCss, yearRead } from "./bookUtils"
+import { FullSlug, resolveRelative } from "../util/path"
 
 const FAVORITES = [
   "Red Rising",
@@ -26,7 +27,9 @@ export const HomeHighlights: QuartzComponent = ({ fileData, allFiles }: QuartzCo
   return (
     <div class="home-highlights">
       <p class="book-stat">
-        {books.length} books read{sinceYear ? ` since ${sinceYear}` : ""}
+        <a class="internal" href={resolveRelative(fileData.slug!, "books/index" as FullSlug)}>
+          {books.length} books read{sinceYear ? ` since ${sinceYear}` : ""}
+        </a>
       </p>
 
       {favorites.length > 0 && (

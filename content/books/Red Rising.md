@@ -5,6 +5,8 @@ tags:
 title: Red Rising
 author: Pierce Brown
 genre: Fiction
+series: Red Rising
+series_order: 1
 year_read: 2026
 rating: 2026
 status: read

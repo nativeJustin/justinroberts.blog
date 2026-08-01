@@ -31,13 +31,27 @@ export function byYearReadDescending(f1: QuartzPluginData, f2: QuartzPluginData)
     return reading1 ? -1 : 1
   }
 
-  if (y1 !== undefined && y2 !== undefined) return y2 - y1
-  if (y1 !== undefined) return -1
-  if (y2 !== undefined) return 1
+  if (y1 !== undefined && y2 !== undefined && y1 !== y2) return y2 - y1
+  if (y1 !== undefined && y2 === undefined) return -1
+  if (y1 === undefined && y2 !== undefined) return 1
 
-  const t1 = (f1.frontmatter?.title as string)?.toLowerCase() ?? ""
-  const t2 = (f2.frontmatter?.title as string)?.toLowerCase() ?? ""
-  return t1.localeCompare(t2)
+  const title1 = (f1.frontmatter?.title as string)?.toLowerCase() ?? ""
+  const title2 = (f2.frontmatter?.title as string)?.toLowerCase() ?? ""
+  const series1 = (f1.frontmatter?.series as string | undefined)?.toLowerCase()
+  const series2 = (f2.frontmatter?.series as string | undefined)?.toLowerCase()
+  const groupComparison = (series1 ?? title1).localeCompare(series2 ?? title2)
+
+  if (groupComparison !== 0) return groupComparison
+
+  if (series1 && series1 === series2) {
+    const order1 = f1.frontmatter?.series_order as number | undefined
+    const order2 = f2.frontmatter?.series_order as number | undefined
+    if (order1 !== undefined && order2 !== undefined && order1 !== order2) {
+      return order2 - order1
+    }
+  }
+
+  return title1.localeCompare(title2)
 }
 
 export function BookCard({ from, book }: { from: FullSlug; book: QuartzPluginData }) {

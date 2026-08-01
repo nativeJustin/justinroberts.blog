@@ -55,14 +55,17 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
     books) — since "currently reading" is more recent than anything already finished. Books that
     are `status: reading` but already have a `year_read` (e.g. logged prematurely) are left
     untouched by both behaviors and just sort/display by their year as normal.
+    Books in a series can use `series` and `series_order` frontmatter; within the same read year,
+    the grid groups them under the series name and displays the highest `series_order` first so
+    the most recently read installment appears on the left.
   - `quartz/components/BookGrid.tsx` — the full card grid on `/books/`. Wired into
     `quartz/components/pages/FolderContent.tsx` with a hard check for `fileData.slug ===
     "books/index"` (folder pages carry the `/index` suffix internally even though the URL is
     `/books/`).
   - `quartz/components/HomeHighlights.tsx` — homepage-only: a dynamic "N books logged since
-    <earliest year>" stat, and a hardcoded `FAVORITES` title list rendered as a card strip. To
-    change the featured books, edit the `FAVORITES` array — titles must match a book's
-    frontmatter `title` exactly.
+    <earliest year>" stat linked to the full Book Library, and a hardcoded `FAVORITES` title list
+    rendered as a card strip. To change the featured books, edit the `FAVORITES` array — titles
+    must match a book's frontmatter `title` exactly.
 - **Homepage (`content/index.md`) has custom layout treatment**, all wired via
   `Component.ConditionalRender` in `quartz.layout.ts` keyed on `fileData.slug === "index"`:
   - Article title and content-meta (date/read-time) are hidden — the sidebar already shows the
@@ -82,6 +85,10 @@ uploaded directly via GitHub's web UI) and wired into `content/books/covers/`.
 - **Explorer sidebar** (`quartz.layout.ts`, `explorerFilter`) excludes `about` and `tags` from the
   nav tree. `/about` is still a real, linkable page — just reachable via the footer link instead
   of the sidebar, since having it in both felt redundant.
+- **Explorer folder titles navigate without expanding.** With `folderClickBehavior: "link"`, the
+  title opens the folder page and only the arrow toggles its children. `explorer.inline.ts` does
+  not automatically expand a folder just because it contains the current page; expansion follows
+  the saved arrow state or the configured default state.
 - **Explorer sidebar scrolls internally on desktop** (`quartz/components/styles/explorer.scss`)
   instead of growing past the viewport — needed once the book library passed 146 entries.
   `.explorer`/`.explorer-content` get `flex: 1 1 auto; min-height: 0;` under

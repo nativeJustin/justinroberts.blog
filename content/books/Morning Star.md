@@ -5,6 +5,8 @@ tags:
 title: Morning Star
 author: Pierce Brown
 genre: Fiction
+series: Red Rising
+series_order: 3
 year_read: 2026
 rating: 5
 status: reading

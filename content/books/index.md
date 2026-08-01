@@ -1,5 +1,5 @@
 ---
-title: Books
+title: Book Library
 ---
 
-A running log of what I've read.
+Browse my complete reading history, with ratings and full reviews where I've written them.
