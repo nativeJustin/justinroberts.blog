@@ -8,6 +8,31 @@ import { BookMeta } from "./quartz/components/BookMeta"
 const explorerFilter = (node: FileTrieNode) =>
   node.slugSegment !== "tags" && node.slugSegment !== "about"
 
+const explorerSort = (a: FileTrieNode, b: FileTrieNode) => {
+  const writingPosts =
+    !a.isFolder && !b.isFolder && a.slug.startsWith("writing/") && b.slug.startsWith("writing/")
+
+  if (writingPosts) {
+    const aDate = new Date(String(a.data?.date ?? 0)).getTime()
+    const bDate = new Date(String(b.data?.date ?? 0)).getTime()
+    return bDate - aDate
+  }
+
+  if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+    return a.displayName.localeCompare(b.displayName, undefined, {
+      numeric: true,
+      sensitivity: "base",
+    })
+  }
+
+  return !a.isFolder && b.isFolder ? 1 : -1
+}
+
+const explorerOptions = {
+  filterFn: explorerFilter,
+  sortFn: explorerSort,
+}
+
 // pages that aren't real posts (homepage, about, book library, folder/tag listings)
 // don't get a comment thread
 const isCommentablePage = (slug: string) =>
@@ -78,7 +103,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({ filterFn: explorerFilter }),
+    Component.Explorer(explorerOptions),
   ],
   right: [Component.DesktopOnly(Component.TableOfContents())],
 }
@@ -98,7 +123,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer({ filterFn: explorerFilter }),
+    Component.Explorer(explorerOptions),
   ],
   right: [],
 }

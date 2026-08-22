@@ -108,7 +108,8 @@ PageList.css = `
   margin: 0;
 }
 
-.section > .tags {
-  margin: 0;
+.section-li > .section > .tags {
+  justify-content: flex-start;
+  margin: 0.4rem 0 0;
 }
 `

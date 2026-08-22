@@ -11,7 +11,12 @@ li.section-li {
 
   & > .section {
     display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    grid-template-columns: fit-content(8em) minmax(0, 1fr);
+
+    & > .tags {
+      grid-column: 2;
+      justify-content: flex-start;
+    }
 
     @media all and ($mobile) {
       & > .tags {
