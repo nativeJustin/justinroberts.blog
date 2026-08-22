@@ -6,7 +6,7 @@ tags:
   - todoist
   - obsidian
 date: 2026-08-21
-description: How I connect Todoist tasks to flexible Obsidian project notes with labels, templates, and the Todoist Sync plugin.
+description: How I connect Todoist tasks to Obsidian project notes using labels or project filters, templates, deep links, and the Todoist Sync plugin.
 ---
 
 I've been using Todoist and Obsidian together for about two years now. Todoist handles my tasks and Obsidian handles my notes. It's a pretty simple setup, and for the most part it has worked really well.
@@ -69,6 +69,22 @@ For this example, I'm building a small side garden. I've tagged each task associ
 
 The label is the connection point. I don't need to build another project structure inside Todoist or duplicate the tasks somewhere else. I can just query that label from Obsidian.
 
+That's how I prefer to organize it, but a label isn't the only option. You can also create a dedicated project in Todoist and have Todoist Sync query that project instead. If the Todoist project is called `Build a side garden`, the filter would look like this:
+
+```todoist
+filter: '#Build\ a\ side\ garden & (due before: +7 days | no date)'
+```
+
+The rest of the setup works the same way. Whether you use a label or a Todoist project really comes down to how you prefer to organize your tasks.
+
+A dedicated Todoist project also gives you a convenient place to link back to the matching note in Obsidian. I can add an **Open in Obsidian** hyperlink to the Todoist project description, use an Obsidian URI as the destination, and jump directly into the note without searching for it:
+
+```text
+obsidian://open?vault=VAULT%20NAME&file=Notes%2FBuild%20a%20side%20garden
+```
+
+The vault name and file path need to be URL encoded, so spaces become `%20` and slashes become `%2F`. That makes the connection work in both directions: the Obsidian note displays the Todoist tasks, and the Todoist project links back to the Obsidian note.
+
 ## My Obsidian project template
 
 When I start a new project, I create a new note in Obsidian and apply my project template.
@@ -112,7 +128,7 @@ filter: "@LABEL & (due before: +7 days | no date)"
 ## Resources
 ````
 
-I replace `@LABEL` with the Todoist label associated with that project.
+I replace `@LABEL` with the Todoist label associated with that project. If I were using a dedicated Todoist project instead, I would replace the filter with the `#PROJECT` version above.
 
 For the garden example, the query looks for `@garden` and then shows matching tasks that are either due within the next seven days or don't have a date.
 
@@ -154,13 +170,19 @@ That distinction keeps me from maintaining the same information in two places. T
 
 This is where Todoist Sync does its thing.
 
-The query looks for the Todoist label associated with the project:
+In my setup, the query looks for the Todoist label associated with the project:
 
 ```todoist
 filter: "@LABEL & (due before: +7 days | no date)"
 ```
 
 That gives me matching tasks with that label that are either due within the next seven days or don't have a date.
+
+If you keep the tasks in their own Todoist project, use the project name instead:
+
+```todoist
+filter: "#PROJECT & (due before: +7 days | no date)"
+```
 
 I'm not recreating those tasks in Obsidian. They're still Todoist tasks. I'm just pulling the relevant ones into the project note so I can see them while I'm looking at everything else.
 
