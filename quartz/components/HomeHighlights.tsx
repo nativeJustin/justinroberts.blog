@@ -10,7 +10,7 @@ const FAVORITES = [
   "Unicorn Project",
   "Discipline Equals Freedom",
   "Exhalation",
-  "Smarter Not Harder",
+  "Digital Minimalism",
   "The Dark Tower",
 ]
 
