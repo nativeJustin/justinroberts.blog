@@ -12,6 +12,7 @@ export const Favicon: QuartzEmitterPlugin = () => ({
     const faviconContent = sharp(iconPath).resize(48, 48).toFormat("png")
     const appleTouchIconContent = sharp(iconPath).resize(180, 180).toFormat("png")
     const safariFavoriteIconContent = sharp(iconPath).resize(512, 512).toFormat("png")
+    const safariTouchIconContent = sharp(iconPath).resize(180, 180).toFormat("png")
 
     yield write({
       ctx: { argv } as BuildCtx,
@@ -29,9 +30,16 @@ export const Favicon: QuartzEmitterPlugin = () => ({
 
     yield write({
       ctx: { argv } as BuildCtx,
-      slug: "avatar-icon-v2" as FullSlug,
+      slug: "avatar-icon-v3" as FullSlug,
       ext: ".png",
       content: safariFavoriteIconContent,
+    })
+
+    yield write({
+      ctx: { argv } as BuildCtx,
+      slug: "avatar-touch-icon-v3" as FullSlug,
+      ext: ".png",
+      content: safariTouchIconContent,
     })
   },
   async *partialEmit() {},

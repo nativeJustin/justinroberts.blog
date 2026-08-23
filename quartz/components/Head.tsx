@@ -1,5 +1,5 @@
 import { i18n } from "../i18n"
-import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path"
+import { getFileExtension, joinSegments } from "../util/path"
 import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
@@ -23,11 +23,14 @@ export default (() => {
     const { css, js, additionalHead } = externalResources
 
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
-    const path = url.pathname as FullSlug
-    const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
-    const iconPath = joinSegments(baseDir, "favicon.ico")
-    const appleTouchIconPath = joinSegments(baseDir, "apple-touch-icon.png")
-    const safariFavoriteIconPath = joinSegments(baseDir, "avatar-icon-v2.png")
+    const safariFavoriteIconPath = new URL(
+      joinSegments(url.pathname, "avatar-icon-v3.png"),
+      url.origin,
+    ).toString()
+    const appleTouchIconPath = new URL(
+      joinSegments(url.pathname, "avatar-touch-icon-v3.png"),
+      url.origin,
+    ).toString()
 
     // Url of current page
     const socialUrl =
@@ -84,10 +87,9 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" href={iconPath} sizes="48x48" />
-        <link rel="apple-touch-icon" href={appleTouchIconPath} sizes="180x180" />
         <link rel="icon" href={safariFavoriteIconPath} sizes="512x512" type="image/png" />
         <link rel="shortcut icon" href={safariFavoriteIconPath} type="image/png" />
+        <link rel="apple-touch-icon" href={appleTouchIconPath} sizes="180x180" />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
