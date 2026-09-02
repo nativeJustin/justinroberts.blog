@@ -12,7 +12,11 @@ Most days have looked pretty similar. Wake up, work out, start work, maybe go fo
 
 The last three months have kind of felt like a blur.
 
-Lately we’ve been trying to be more intentional about what happens when the workday ends. One of the biggest changes has been watching a lot less TV at night.
+At some point we both started talking about how fast the weeks were going by. It felt like we were getting everything done that we needed to get done, but we weren’t really enjoying much of the space in between. The workday would end, we’d eat dinner, turn something on, and suddenly the night was over.
+
+Neither of us really liked that feeling.
+
+So lately we’ve been trying to be more intentional about what happens when the workday ends. Not in some big life-overhaul way. Mostly we’ve just been asking ourselves what we actually want our evenings to look like instead of automatically defaulting to the same routine.
 
 We’ve been trying to finish work around 5:00 or 5:30 and actually be done. Then we make dinner together and eat at the dinner table. Instead of dinner being something we need to get through before sitting on the couch, we’ve been making dinner more of the activity for the night.
 
@@ -30,6 +34,8 @@ And because we’re not rushing through dinner to go watch something, cooking ha
 
 We cook. We sit at the table. We talk about our days. We laugh and goof around. Dinner takes longer, but somehow the evenings feel longer too.
 
+We’ve also found that we bond a lot more over the whole process. Finding new recipes together, making something we haven’t had before, cooking it, and then sitting down to eat gives us something to do together that isn’t just watching something. It’s become one of the parts of the evening I look forward to.
+
 That’s what has made me start wondering if we’ve actually been as busy as we thought we were.
 
 Maybe we’ve just been distracted.
@@ -44,7 +50,7 @@ Watch TV. Look something up on my phone. Reply to a text. Check something else. 
 
 None of those things are inherently bad. I’m going to watch TV again. I’m going to play video games again. I’m definitely going to use my phone.
 
-But I think there’s a difference between choosing to do those things and automatically filling every empty part of the day with them.
+But I think there’s a difference between choosing to do those things versus automatically filling every empty part of the day with them.
 
 Cal Newport talks about something similar in Deep Work. One of his rules is “Embrace Boredom.” The basic idea is that when we constantly reach for stimulation whenever nothing is happening, we train ourselves to expect that stimulation. He explores the idea further in Digital Minimalism, especially how constantly filling empty moments with screens can push out things that are ultimately more meaningful.
 
@@ -61,6 +67,18 @@ I laughed when I heard it, but I’ve kept thinking about it.
 We’re so used to constant input that doing absolutely nothing almost feels strange. But you can just sit there. You can think about a problem. You can think about your life. You can meditate. You can let your mind wander.
 
 You don’t have to turn every free moment into entertainment.
+
+My wife and I experienced a lot of that on a road trip we took from Colorado to Alaska. There were stretches where we had no service at all, and some days we were driving for 16 hours.
+
+Sometimes SiriusXM would come through and we’d listen to whatever was available. Other times there was nothing.
+
+So we just drove.
+
+We looked at the scenery. We talked. We sat quietly. We thought about things. We daydreamed.
+
+There wasn’t anything else competing for our attention, and I think there’s something really valuable about that. You give your mind enough space and it starts wandering on its own. You think about things you haven’t thought about in a while. You make connections. Sometimes you don’t think about anything important at all.
+
+We’ve gotten so used to having something available every second that I think we’ve forgotten how important it is to just let our minds wander.
 
 And when I give myself that space, I feel more creative. I want to work on my blog. I want to read. I think through problems I’ve been stuck on. Sometimes I don’t do anything productive at all.
 
@@ -80,4 +98,4 @@ There isn’t some new productivity system behind any of this. We didn’t sudde
 
 We just stopped filling every available minute.
 
-And somehow, life has felt a lot less busy.
+And somehow, the days don’t feel like they’re moving quite as fast.
