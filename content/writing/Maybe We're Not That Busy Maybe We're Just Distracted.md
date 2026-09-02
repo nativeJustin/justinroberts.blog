@@ -22,7 +22,7 @@ My wife is currently in her master’s program for nutrition, and she has a deto
 
 When life gets busy, convenience starts winning. You find a handful of meals that are easy and before long you’re eating basically the same stuff every week.
 
-We’ve made a quinoa salad with grilled salmon and green beans with almonds, filet mignon with an Asian salad and wild rice, and a turkey bok choy stir fry.
+For example, we’ve made grilled salmon over quinoa salad with green beans and toasted almonds, filet mignon with wild rice and a crisp Asian-style salad, and a turkey and bok choy stir fry.
 
 More than anything, it has made dinner feel interesting again.
 
