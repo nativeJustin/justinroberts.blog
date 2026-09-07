@@ -121,20 +121,10 @@ She tried it.
 
 Email started working.
 
-I had reset the account, rebuilt the SMTP configuration, manually overridden the ports, turned on TLS, generated an AT&T secure mail key, checked logs, and spent an hour staring at server connections that were already working.
+What got me wasn't just how simple the fix was. It was how thoroughly I had talked myself out of the evidence in front of me.
 
-The problem was a spell-check setting.
+The account worked in Yahoo. It worked on her phone. Apple Mail said SMTP was connected. But because I had decided at the beginning that this was a server problem, every new clue somehow sent me back to the server.
 
-What got me was how locked in I was on my first assumption.
+I had spent an hour trying to fix a connection that was already working.
 
-The second I saw an outgoing email problem, I decided it was SMTP. From there, almost everything I did was built around that theory.
-
-Meanwhile, the account worked in Yahoo.
-
-It worked on her phone.
-
-Apple Mail itself said the SMTP connection was fine.
-
-The clues were there. I just kept assuming the weirdest part of the system had to be the problem.
-
-Instead, it was a spell-check setting.
+The send button was stuck because of spell check.
