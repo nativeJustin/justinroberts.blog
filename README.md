@@ -29,6 +29,6 @@ bindings in the Cloudflare dashboard before deploying:
 | `TURNSTILE_SECRET`   | Secret   | Verifies Cloudflare Turnstile responses                      |
 | `TURNSTILE_SITE_KEY` | Variable | Renders the public Turnstile widget                          |
 
-New posts create draft broadcasts through GitHub Actions. Add `RESEND_API_KEY` and
-`RESEND_SEGMENT_ID` as repository Actions secrets. A separate Resend API key is recommended so the
-Worker and GitHub Action can be revoked independently.
+New posts create draft broadcasts through GitHub Actions. Add `RESEND_API_KEY` as a repository
+Actions secret. A separate Resend API key is recommended so the Worker and GitHub Action can be
+revoked independently.
