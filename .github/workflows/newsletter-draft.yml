@@ -1,0 +1,31 @@
+name: Create newsletter draft
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/writing/*.md"
+
+permissions:
+  contents: read
+
+jobs:
+  create-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - name: Create Resend draft
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_SEGMENT_ID: "3f799ea6-080c-41dc-b78b-00f5834e40b9"
+          RESEND_FROM_EMAIL: "Justin Roberts <newsletter@updates.justinroberts.blog>"
+          SITE_URL: "https://justinroberts.blog"
+        run: node scripts/create-newsletter-drafts.mjs "${{ github.event.before }}" "${{ github.sha }}"

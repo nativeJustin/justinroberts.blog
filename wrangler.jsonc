@@ -1,7 +1,15 @@
 {
   "name": "justinroberts-blog",
+  "main": "worker/index.ts",
+  "keep_vars": true,
   "compatibility_date": "2026-07-10",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS",
+  },
+  "vars": {
+    "RESEND_FROM_EMAIL": "Justin Roberts <newsletter@updates.justinroberts.blog>",
+    "RESEND_SEGMENT_ID": "3f799ea6-080c-41dc-b78b-00f5834e40b9",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAExu2E7vYmedPjmx",
+  },
 }

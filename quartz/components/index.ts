@@ -23,6 +23,8 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import NewsletterSignup from "./NewsletterSignup"
+import SubscribeLink from "./SubscribeLink"
 
 export {
   ArticleTitle,
@@ -50,4 +52,6 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  NewsletterSignup,
+  SubscribeLink,
 }
