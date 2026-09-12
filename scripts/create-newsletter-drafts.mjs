@@ -71,8 +71,8 @@ async function createDraft(file) {
       from,
       subject: title,
       name: `New post: ${title}`,
-      html: `<p>I published something new:</p><p><a href="${url}"><strong>${safeTitle} →</strong></a></p><p>—Justin</p><p style="font-size:12px;color:#666">You’re getting this because you signed up for new posts. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>.</p>`,
-      text: `I published something new:\n\n${title} →\n${url}\n\n—Justin\n\nYou’re getting this because you signed up for new posts.\nUnsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}`,
+      html: `<p>I wrote something new and wanted to send it your way:</p><p><a href="${url}"><strong>${safeTitle} →</strong></a></p><p>Thanks for reading.</p><p>Justin</p><p style="font-size:12px;color:#666">You’re getting this because you signed up for new posts. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>.</p>`,
+      text: `I wrote something new and wanted to send it your way:\n\n${title} →\n${url}\n\nThanks for reading.\n\nJustin\n\nYou’re getting this because you signed up for new posts.\nUnsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}`,
     }),
   })
 

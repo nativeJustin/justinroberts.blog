@@ -126,13 +126,13 @@ Confirm your email: ${confirmationLink}
 
 This link expires in 24 hours. If you didn't request it, you can ignore this email.
 
-—Justin`
+Justin`
 
   const html = `<p>Hi,</p>
 <p>You asked to get new posts from justinroberts.blog by email.</p>
 <p><a href="${confirmationLink}">Confirm my email →</a></p>
 <p>This link expires in 24 hours. If you didn’t request it, you can ignore this email.</p>
-<p>—Justin</p>`
+<p>Justin</p>`
 
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
