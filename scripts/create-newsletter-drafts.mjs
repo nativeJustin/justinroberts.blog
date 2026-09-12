@@ -40,22 +40,6 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;")
 }
 
-function excerpt(markdown) {
-  const cleaned = markdown
-    .replace(/!\[\[[^\]]+\]\]/g, "")
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
-    .replace(/\[\[([^\]|]+\|)?([^\]]+)\]\]/g, "$2")
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
-    .replace(/^#{1,6}\s+/gm, "")
-    .replace(/^>\s?/gm, "")
-    .replace(/[*_~`]/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
-
-  const words = cleaned.split(" ")
-  return words.length > 65 ? `${words.slice(0, 65).join(" ")}…` : cleaned
-}
-
 function postUrl(file) {
   const name = path.basename(file, ".md")
   const slug = name
@@ -68,15 +52,13 @@ function postUrl(file) {
 
 async function createDraft(file) {
   const source = await readFile(file, "utf8")
-  const { data, content } = matter(source)
+  const { data } = matter(source)
 
   if (data.draft === true) return
 
   const title = String(data.title ?? path.basename(file, ".md"))
-  const summary = String(data.description ?? excerpt(content))
   const url = postUrl(file)
   const safeTitle = escapeHtml(title)
-  const safeSummary = escapeHtml(summary)
 
   const response = await fetch("https://api.resend.com/broadcasts", {
     method: "POST",
@@ -89,8 +71,8 @@ async function createDraft(file) {
       from,
       subject: title,
       name: `New post: ${title}`,
-      html: `<h1>${safeTitle}</h1><p>${safeSummary}</p><p><a href="${url}">Read the full post</a></p><p style="font-size:12px;color:#666">You’re receiving this because you subscribed to new posts from Justin Roberts. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>.</p>`,
-      text: `${title}\n\n${summary}\n\nRead the full post: ${url}\n\nUnsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}`,
+      html: `<p>I published something new:</p><p><a href="${url}"><strong>${safeTitle} →</strong></a></p><p>—Justin</p><p style="font-size:12px;color:#666">You’re getting this because you signed up for new posts. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">Unsubscribe</a>.</p>`,
+      text: `I published something new:\n\n${title} →\n${url}\n\n—Justin\n\nYou’re getting this because you signed up for new posts.\nUnsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}`,
     }),
   })
 
