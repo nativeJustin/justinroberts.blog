@@ -39,3 +39,30 @@ body[data-slug^="books/"] article img {
   display: block;
   margin: 1rem auto;
 }
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.qr-card {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
+  text-align: center;
+
+  img {
+    display: block;
+    width: min(100%, 320px);
+    margin: 0 auto 1rem;
+    border-radius: 0.35rem;
+  }
+
+  figcaption {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+}

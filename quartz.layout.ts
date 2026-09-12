@@ -6,7 +6,10 @@ import { BookReviewNote } from "./quartz/components/BookReviewNote"
 import { BookMeta } from "./quartz/components/BookMeta"
 
 const explorerFilter = (node: FileTrieNode) =>
-  node.slugSegment !== "tags" && node.slugSegment !== "about"
+  node.slugSegment !== "tags" &&
+  node.slugSegment !== "about" &&
+  node.slugSegment !== "subscribe" &&
+  node.slugSegment !== "share"
 
 const explorerSort = (a: FileTrieNode, b: FileTrieNode) => {
   const writingPosts =
@@ -38,6 +41,8 @@ const explorerOptions = {
 const isCommentablePage = (slug: string) =>
   slug !== "index" &&
   slug !== "about" &&
+  slug !== "subscribe" &&
+  slug !== "share" &&
   !slug.startsWith("books/") &&
   !slug.startsWith("tags/") &&
   !slug.endsWith("/index")
@@ -45,6 +50,9 @@ const isCommentablePage = (slug: string) =>
 const Comments = Component.Comments({
   serverURL: "https://justinroberts-blog-comments.vercel.app",
 })
+
+const NewsletterSignup = Component.NewsletterSignup()
+const SubscribePageSignup = Component.NewsletterSignup({ variant: "page" })
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -55,8 +63,16 @@ export const sharedPageComponents: SharedLayout = {
       component: HomeHighlights,
       condition: (page) => page.fileData.slug === "index",
     }),
+    Component.ConditionalRender({
+      component: SubscribePageSignup,
+      condition: (page) => page.fileData.slug === "subscribe",
+    }),
     BookMeta,
     BookReviewNote,
+    Component.ConditionalRender({
+      component: NewsletterSignup,
+      condition: (page) => page.fileData.slug !== "subscribe",
+    }),
     Component.ConditionalRender({
       component: Comments,
       condition: (page) => isCommentablePage(page.fileData.slug ?? ""),
@@ -66,6 +82,8 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       "About Me": "/about",
       "Contact: hello@justinroberts.blog": "mailto:hello@justinroberts.blog",
+      Subscribe: "/subscribe",
+      Share: "/share",
       "Subscribe via RSS": "/index.xml",
       "Buy Me a Coffee": "https://buymeacoffee.com/justinroberts",
       GitHub: "https://github.com/nativeJustin",
@@ -103,6 +121,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
+    Component.SubscribeLink(),
     Component.Explorer(explorerOptions),
   ],
   right: [Component.DesktopOnly(Component.TableOfContents())],
@@ -123,6 +142,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
+    Component.SubscribeLink(),
     Component.Explorer(explorerOptions),
   ],
   right: [],

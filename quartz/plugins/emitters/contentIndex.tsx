@@ -137,6 +137,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             ([slug]) =>
               !slug.startsWith("books/") &&
               slug !== "about" &&
+              slug !== "subscribe" &&
+              slug !== "share" &&
               slug !== "index" &&
               !slug.endsWith("/index"),
           ),

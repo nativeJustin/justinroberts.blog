@@ -14,4 +14,21 @@ npx quartz build --serve
 
 Cloudflare's GitHub integration builds and deploys automatically on every push to `main`
 (build command `npx quartz build`, deploy command `npx wrangler deploy`, output directory `public`,
-configured via `wrangler.jsonc`). No GitHub secrets required.
+configured via `wrangler.jsonc`).
+
+## Newsletter configuration
+
+The signup form uses the site's Cloudflare Worker for double opt-in subscriptions. Add these
+bindings in the Cloudflare dashboard before deploying:
+
+| Name                 | Type     | Purpose                                                      |
+| -------------------- | -------- | ------------------------------------------------------------ |
+| `RESEND_API_KEY`     | Secret   | Sends confirmations and manages contacts                     |
+| `RESEND_SEGMENT_ID`  | Variable | Adds confirmed readers to the newsletter segment             |
+| `SIGNING_SECRET`     | Secret   | Signs one-day confirmation links; use a random 32-byte value |
+| `TURNSTILE_SECRET`   | Secret   | Verifies Cloudflare Turnstile responses                      |
+| `TURNSTILE_SITE_KEY` | Variable | Renders the public Turnstile widget                          |
+
+New posts create draft broadcasts through GitHub Actions. Add `RESEND_API_KEY` and
+`RESEND_SEGMENT_ID` as repository Actions secrets. A separate Resend API key is recommended so the
+Worker and GitHub Action can be revoked independently.
