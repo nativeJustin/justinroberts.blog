@@ -91,6 +91,9 @@ export default (() => {
         <link rel="shortcut icon" href={safariFavoriteIconPath} type="image/png" />
         <link rel="apple-touch-icon" href={appleTouchIconPath} sizes="180x180" />
         <meta name="description" content={description} />
+        {(fileData.frontmatter?.unlisted === true || fileData.frontmatter?.unlisted === "true") && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
         <meta name="generator" content="Quartz" />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}

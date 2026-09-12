@@ -1,6 +1,7 @@
 node_modules/
 public/
 quartz/.quartz-cache/
+.wrangler/
 .obsidian/
 .DS_Store
 tsconfig.tsbuildinfo

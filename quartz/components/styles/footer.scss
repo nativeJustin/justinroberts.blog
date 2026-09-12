@@ -1,6 +1,9 @@
 footer {
   text-align: left;
+  margin-top: 3rem;
   margin-bottom: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
   opacity: 0.7;
 
   & ul {
@@ -9,7 +12,20 @@ footer {
     padding: 0;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    margin-top: -1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+  }
+
+  & li:not(:last-child)::after {
+    content: "·";
+    margin-left: 0.75rem;
+    color: var(--gray);
+  }
+
+  & .footer-contact {
+    margin: 1.25rem 0 0;
+    font-size: 0.9rem;
   }
 }

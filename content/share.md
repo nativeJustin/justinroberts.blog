@@ -1,6 +1,7 @@
 ---
 title: Share
 description: Scan or download a QR code for Justin Roberts' blog or email newsletter.
+unlisted: true
 ---
 
 Use the first code to share the blog. The second goes directly to the email subscription page.

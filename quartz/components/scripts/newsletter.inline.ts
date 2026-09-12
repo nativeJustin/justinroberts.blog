@@ -107,7 +107,7 @@ document.addEventListener("nav", async () => {
     })
 
     if (confirmationStatus === "confirmed") {
-      showStatus(status, "You’re subscribed. The next post will land in your inbox.", "success")
+      showStatus(status, "You’re subscribed. I’ll email you the next time I publish.", "success")
     } else if (confirmationStatus === "expired") {
       showStatus(status, "That confirmation link expired. Enter your email to try again.", "error")
     }
@@ -132,7 +132,7 @@ document.addEventListener("nav", async () => {
         form.reset()
         showStatus(
           status!,
-          result.message ?? "Check your inbox to confirm your subscription.",
+          result.message ?? "I sent you a confirmation email. Click the link and you’re all set.",
           "success",
         )
       } catch (error) {

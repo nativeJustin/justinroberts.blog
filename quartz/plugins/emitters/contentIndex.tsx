@@ -101,6 +101,10 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const linkIndex: ContentIndexMap = new Map()
       for (const [tree, file] of content) {
         const slug = file.data.slug!
+        const isUnlisted =
+          file.data.frontmatter?.unlisted === true || file.data.frontmatter?.unlisted === "true"
+        if (isUnlisted) continue
+
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
           linkIndex.set(slug, {

@@ -116,6 +116,23 @@ async function sendConfirmation(request: Request, env: Env, email: string): Prom
   const token = await createConfirmationToken(email, env.SIGNING_SECRET)
   const confirmationUrl = new URL("/api/confirm", request.url)
   confirmationUrl.searchParams.set("token", token)
+  const confirmationLink = confirmationUrl.toString()
+
+  const text = `Hi,
+
+You asked to get new posts from justinroberts.blog by email.
+
+Confirm your email: ${confirmationLink}
+
+This link expires in 24 hours. If you didn't request it, you can ignore this email.
+
+—Justin`
+
+  const html = `<p>Hi,</p>
+<p>You asked to get new posts from justinroberts.blog by email.</p>
+<p><a href="${confirmationLink}">Confirm my email →</a></p>
+<p>This link expires in 24 hours. If you didn’t request it, you can ignore this email.</p>
+<p>—Justin</p>`
 
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -127,9 +144,9 @@ async function sendConfirmation(request: Request, env: Env, email: string): Prom
       from: env.RESEND_FROM_EMAIL ?? "Justin Roberts <newsletter@updates.justinroberts.blog>",
       reply_to: env.RESEND_REPLY_TO ?? "hello@justinroberts.blog",
       to: [email],
-      subject: "Confirm your subscription to Justin Roberts",
-      text: `Confirm your subscription: ${confirmationUrl.toString()}\n\nIf you didn’t request this, you can ignore this email.`,
-      html: `<p>Confirm that you want new posts from Justin Roberts by email.</p><p><a href="${confirmationUrl.toString()}">Confirm subscription</a></p><p>If you didn’t request this, you can ignore this email.</p>`,
+      subject: "Confirm your email for justinroberts.blog",
+      text,
+      html,
     }),
   })
 
@@ -138,7 +155,7 @@ async function sendConfirmation(request: Request, env: Env, email: string): Prom
     return json("Could not send the confirmation email. Please try again.", 502)
   }
 
-  return json("Check your inbox to confirm your subscription.")
+  return json("I sent you a confirmation email. Click the link and you’re all set.")
 }
 
 async function subscribe(request: Request, env: Env): Promise<Response> {
@@ -158,7 +175,7 @@ async function subscribe(request: Request, env: Env): Promise<Response> {
   const website = String(form.get("website") ?? "")
   const turnstileToken = String(form.get("cf-turnstile-response") ?? "")
 
-  if (website) return json("Check your inbox to confirm your subscription.")
+  if (website) return json("I sent you a confirmation email. Click the link and you’re all set.")
   if (email.length > 254 || !emailPattern.test(email)) {
     return json("Enter a valid email address.", 400)
   }

@@ -1,10 +1,12 @@
 ---
-title: Subscribe
-description: Get new posts from Justin Roberts by email whenever something new is published.
+title: Get New Posts by Email
+description: Get an email from Justin Roberts whenever something new is published.
 ---
 
-I write about the things I’m working on and trying to figure out, including software, Brazilian Jiu-Jitsu, fitness, books, and whatever else has my attention.
+I don’t publish on a schedule, and I don’t plan to fill your inbox.
 
-Subscribe below and I’ll send you an email when I publish something new.
+When I write something new, I’ll send you one email with a link to it. It might be about software, AI, Brazilian Jiu-Jitsu, fitness, books, or whatever else I’m trying to figure out.
 
-Prefer RSS? You can also [[index.xml|subscribe to the feed]].
+If that sounds like your thing, add your email below. I’ll send a quick confirmation first so I know it was actually you.
+
+Prefer RSS? [[index.xml|The feed is here]].

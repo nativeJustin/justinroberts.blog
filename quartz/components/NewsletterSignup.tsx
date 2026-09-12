@@ -19,15 +19,13 @@ export default ((opts?: Options) => {
         class={classNames(displayClass, "newsletter-signup", `newsletter-signup-${variant}`)}
         aria-label="Email newsletter signup"
       >
-        <div class="newsletter-signup-copy">
-          <p class="eyebrow">Newsletter</p>
-          <h2>{isPage ? "Get new posts by email" : "Get the next post"}</h2>
-          <p>
-            {isPage
-              ? "I’ll email you when I publish something new. No spam, and you can unsubscribe anytime."
-              : "I’ll send you an email whenever I publish something new."}
-          </p>
-        </div>
+        {!isPage && (
+          <div class="newsletter-signup-copy">
+            <p class="eyebrow">Newsletter</p>
+            <h2>Get the next post</h2>
+            <p>I’ll send you an email whenever I publish something new.</p>
+          </div>
+        )}
 
         <form class="newsletter-form" method="post" action="/api/subscribe">
           <label>

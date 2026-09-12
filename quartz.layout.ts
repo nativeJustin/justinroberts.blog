@@ -51,7 +51,6 @@ const Comments = Component.Comments({
   serverURL: "https://justinroberts-blog-comments.vercel.app",
 })
 
-const NewsletterSignup = Component.NewsletterSignup()
 const SubscribePageSignup = Component.NewsletterSignup({ variant: "page" })
 
 // components shared across all pages
@@ -70,24 +69,25 @@ export const sharedPageComponents: SharedLayout = {
     BookMeta,
     BookReviewNote,
     Component.ConditionalRender({
-      component: NewsletterSignup,
-      condition: (page) => page.fileData.slug !== "subscribe",
-    }),
-    Component.ConditionalRender({
       component: Comments,
       condition: (page) => isCommentablePage(page.fileData.slug ?? ""),
     }),
   ],
   footer: Component.Footer({
-    links: {
-      "About Me": "/about",
-      "Contact: hello@justinroberts.blog": "mailto:hello@justinroberts.blog",
-      Subscribe: "/subscribe",
-      Share: "/share",
-      "Subscribe via RSS": "/index.xml",
-      "Buy Me a Coffee": "https://buymeacoffee.com/justinroberts",
-      GitHub: "https://github.com/nativeJustin",
-    },
+    links: [
+      { text: "About", href: "/about" },
+      { text: "Email updates", href: "/subscribe" },
+      { text: "RSS", href: "/index.xml" },
+      { text: "GitHub", href: "https://github.com/nativeJustin" },
+      {
+        text: "☕",
+        href: "https://buymeacoffee.com/justinroberts",
+        ariaLabel: "Buy me a coffee",
+        title: "Buy me a coffee",
+        newTab: true,
+      },
+    ],
+    contact: "hello@justinroberts.blog",
   }),
 }
 
@@ -121,7 +121,6 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.SubscribeLink(),
     Component.Explorer(explorerOptions),
   ],
   right: [Component.DesktopOnly(Component.TableOfContents())],
@@ -142,7 +141,6 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.SubscribeLink(),
     Component.Explorer(explorerOptions),
   ],
   right: [],
