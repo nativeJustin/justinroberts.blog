@@ -29,8 +29,9 @@ export const BookReviewNote: QuartzComponent = ({
 
   return (
     <p class={classNames(displayClass, "book-review-note")}>
-      I'm writing full reviews for books going forward. This one was logged before that started, so
-      it's tracked here without one.
+      {fileData.frontmatter?.review_pending === true
+        ? "Book review coming soon."
+        : "I'm writing full reviews for books going forward. This one was logged before that started, so it's tracked here without one."}
     </p>
   )
 }
