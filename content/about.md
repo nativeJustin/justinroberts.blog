@@ -8,7 +8,7 @@ Hi, I'm Justin.
 
 I've worked in tech since 2021. Most of my work involves taking customer problems, technical systems, and APIs and figuring out how to make all of it work together. A lot of what I'm experimenting with right now involves AI, which is why it shows up here so often.
 
-Outside of work, I've trained Brazilian Jiu-Jitsu for more than eight years and I'm currently a two-stripe brown belt. Training has been a pretty constant part of my life, even as everything else around it has changed. I also lift, run, and spend a lot of time learning about health, fitness, and nutrition.
+Outside of work, I've trained Brazilian Jiu-Jitsu for more than eight years and I'm currently a three-stripe brown belt. Training has been a pretty constant part of my life, even as everything else around it has changed. I also lift, run, and spend a lot of time learning about health, fitness, and nutrition.
 
 I read a lot, especially science fiction and fantasy. I keep a library in Obsidian with the books I've read, my ratings, and the occasional full review. That library eventually became one of the first things I added to this site.
 
