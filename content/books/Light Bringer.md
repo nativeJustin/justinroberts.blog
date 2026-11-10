@@ -10,7 +10,8 @@ series_order: 6
 year_read: 2026
 rating: 5
 status: read
-review_pending: true
+reviewed: true
+review: writing/Light-Bringer-Book-Review
 cover: "covers/lightbringer.webp"
 ---
 
