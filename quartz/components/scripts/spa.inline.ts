@@ -110,7 +110,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
       const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
       el?.scrollIntoView()
     } else {
-      window.scrollTo({ top: 0 })
+      window.scrollTo({ top: 0, behavior: "instant" })
     }
   }
 
