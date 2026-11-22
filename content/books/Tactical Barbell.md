@@ -8,7 +8,8 @@ genre: Fitness
 year_read: 2026
 rating: 4
 status: read
-review_pending: true
+reviewed: true
+review: writing/Tactical-Barbell-Book-Review
 cover: "covers/Tactical-Barbell.webp"
 ---
 
